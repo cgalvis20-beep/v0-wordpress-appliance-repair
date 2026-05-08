@@ -29,7 +29,7 @@ export function HeroSection() {
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight text-balance">
             Fast, Reliable{" "}
-            <span className="text-primary">Appliance Repair</span> in London &amp; Area
+            <span className="text-primary">Appliance Repair</span>{" "}in London &amp; Area
           </h1>
 
           {/* Subheadline */}
