@@ -1,7 +1,7 @@
 export const companyInfo = {
   name: "My Appliance Pro",
-  phone: "(519) 555-0123",
-  phoneClean: "5195550123",
+  phone: "(519) 617-8350",
+  phoneClean: "5196178350",
   email: "info@myappliancepro.ca",
   address: {
     street: "123 Dundas Street",
