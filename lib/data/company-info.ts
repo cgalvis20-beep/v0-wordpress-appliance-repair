@@ -1,5 +1,5 @@
 export const companyInfo = {
-  name: "MyappliancePro",
+  name: "My Appliance Pro",
   phone: "(519) 555-0123",
   phoneClean: "5195550123",
   email: "info@myappliancepro.ca",
@@ -23,7 +23,7 @@ export const companyInfo = {
   calendlyUrl: "https://calendly.com/myappliancepro/service-call",
   tagline: "Fast, Reliable Appliance Repair in London & Surrounding Areas",
   description:
-    "MyappliancePro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by thousands of homeowners.",
+    "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by thousands of homeowners.",
 }
 
 export const serviceAreas = [

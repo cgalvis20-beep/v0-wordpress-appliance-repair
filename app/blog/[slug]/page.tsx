@@ -1,0 +1,359 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { blogPosts } from "@/lib/data/blog-posts"
+import { companyInfo } from "@/lib/data/company-info"
+import { Breadcrumbs } from "@/components/shared/breadcrumbs"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import {
+  Calendar,
+  Clock,
+  User,
+  ArrowLeft,
+  ArrowRight,
+  Phone,
+  Share2,
+  Facebook,
+  Twitter,
+  Linkedin,
+} from "lucide-react"
+
+interface BlogPostPageProps {
+  params: Promise<{ slug: string }>
+}
+
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = blogPosts.find((p) => p.slug === slug)
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+    }
+  }
+
+  return {
+    title: post.title,
+    description: post.metaDescription,
+    openGraph: {
+      title: post.title,
+      description: post.metaDescription,
+      type: "article",
+      publishedTime: post.publishedDate,
+      authors: [post.author],
+    },
+  }
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const post = blogPosts.find((p) => p.slug === slug)
+
+  if (!post) {
+    notFound()
+  }
+
+  // Get related posts (same category, excluding current)
+  const relatedPosts = blogPosts
+    .filter((p) => p.category === post.category && p.slug !== slug)
+    .slice(0, 3)
+
+  // Get previous and next posts
+  const currentIndex = blogPosts.findIndex((p) => p.slug === slug)
+  const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null
+  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-primary py-12 lg:py-20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: post.title },
+            ]}
+            className="mb-6 text-primary-foreground/80"
+          />
+          <div className="mx-auto max-w-3xl">
+            <Badge className="mb-4 bg-accent text-accent-foreground">
+              {post.category}
+            </Badge>
+            <h1 className="mb-6 text-3xl font-bold tracking-tight text-primary-foreground lg:text-4xl xl:text-5xl text-balance">
+              {post.title}
+            </h1>
+            <div className="flex flex-wrap items-center gap-4 text-primary-foreground/80">
+              <span className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                {post.author}
+              </span>
+              <span className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                {post.publishedDate}
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                {post.readTime}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Article Content */}
+      <article className="py-12 lg:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl">
+            {/* Introduction */}
+            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
+              {post.excerpt}
+            </p>
+
+            {/* Table of Contents */}
+            {post.tableOfContents && post.tableOfContents.length > 0 && (
+              <div className="mb-12 rounded-lg bg-secondary p-6">
+                <h2 className="mb-4 text-lg font-semibold text-foreground">
+                  In This Article
+                </h2>
+                <nav>
+                  <ul className="space-y-2">
+                    {post.tableOfContents.map((item, index) => (
+                      <li key={index}>
+                        <a
+                          href={`#section-${index + 1}`}
+                          className="text-primary hover:underline"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+            )}
+
+            {/* Article Sections */}
+            <div className="prose prose-lg max-w-none">
+              {post.sections.map((section, index) => (
+                <section key={index} id={`section-${index + 1}`} className="mb-12">
+                  <h2 className="mb-4 text-2xl font-bold text-foreground">
+                    {section.heading}
+                  </h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    {section.content.split("\n\n").map((paragraph, pIndex) => (
+                      <p key={pIndex}>{paragraph}</p>
+                    ))}
+                  </div>
+                  {section.tips && section.tips.length > 0 && (
+                    <div className="mt-6 rounded-lg border-l-4 border-accent bg-accent/10 p-4">
+                      <h4 className="mb-2 font-semibold text-foreground">
+                        Pro Tips:
+                      </h4>
+                      <ul className="space-y-2">
+                        {section.tips.map((tip, tipIndex) => (
+                          <li
+                            key={tipIndex}
+                            className="flex items-start gap-2 text-muted-foreground"
+                          >
+                            <span className="mt-1 text-accent">•</span>
+                            {tip}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </section>
+              ))}
+            </div>
+
+            {/* Key Takeaways */}
+            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+              <div className="mb-12 rounded-lg bg-primary/5 p-6">
+                <h3 className="mb-4 text-xl font-bold text-foreground">
+                  Key Takeaways
+                </h3>
+                <ul className="space-y-3">
+                  {post.keyTakeaways.map((takeaway, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+                        {index + 1}
+                      </span>
+                      <span className="text-muted-foreground">{takeaway}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* CTA Box */}
+            <div className="mb-12 rounded-xl bg-primary p-8 text-center">
+              <h3 className="mb-3 text-2xl font-bold text-primary-foreground">
+                Need Professional Help?
+              </h3>
+              <p className="mb-6 text-primary-foreground/90">
+                If you&apos;re experiencing appliance issues, our certified technicians are here to help.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
+                >
+                  <Link href="/booking">Book a Repair</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                >
+                  <a href={`tel:${companyInfo.phoneClean}`}>
+                    <Phone className="mr-2 h-4 w-4" />
+                    {companyInfo.phone}
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Share Buttons */}
+            <div className="mb-12 flex items-center gap-4">
+              <span className="flex items-center gap-2 font-semibold text-foreground">
+                <Share2 className="h-4 w-4" />
+                Share this article:
+              </span>
+              <div className="flex gap-2">
+                <Button size="icon" variant="outline" asChild>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://myappliancepro.ca/blog/${post.slug}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on Facebook"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button size="icon" variant="outline" asChild>
+                  <a
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://myappliancepro.ca/blog/${post.slug}`)}&text=${encodeURIComponent(post.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on Twitter"
+                  >
+                    <Twitter className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button size="icon" variant="outline" asChild>
+                  <a
+                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://myappliancepro.ca/blog/${post.slug}`)}&title=${encodeURIComponent(post.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Post Navigation */}
+            <div className="flex flex-col gap-4 border-t border-b border-border py-8 sm:flex-row sm:justify-between">
+              {prevPost ? (
+                <Link
+                  href={`/blog/${prevPost.slug}`}
+                  className="group flex items-center gap-2 text-muted-foreground hover:text-primary"
+                >
+                  <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                  <div>
+                    <p className="text-xs uppercase tracking-wide">Previous</p>
+                    <p className="font-medium line-clamp-1">{prevPost.title}</p>
+                  </div>
+                </Link>
+              ) : (
+                <div />
+              )}
+              {nextPost && (
+                <Link
+                  href={`/blog/${nextPost.slug}`}
+                  className="group flex items-center gap-2 text-right text-muted-foreground hover:text-primary"
+                >
+                  <div>
+                    <p className="text-xs uppercase tracking-wide">Next</p>
+                    <p className="font-medium line-clamp-1">{nextPost.title}</p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      </article>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-secondary py-16 lg:py-24">
+          <div className="container mx-auto px-4">
+            <h2 className="mb-8 text-2xl font-bold text-foreground">
+              Related Articles
+            </h2>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {relatedPosts.map((relatedPost) => (
+                <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
+                  <Card className="group h-full transition-all hover:shadow-lg hover:border-primary/50">
+                    <CardContent className="p-6">
+                      <Badge variant="secondary" className="mb-3">
+                        {relatedPost.category}
+                      </Badge>
+                      <h3 className="mb-3 text-lg font-semibold text-foreground group-hover:text-primary line-clamp-2">
+                        {relatedPost.title}
+                      </h3>
+                      <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
+                        {relatedPost.excerpt}
+                      </p>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          {relatedPost.readTime}
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.metaDescription,
+            author: {
+              "@type": "Person",
+              name: post.author,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: companyInfo.name,
+            },
+            datePublished: post.publishedDate,
+            dateModified: post.publishedDate,
+          }),
+        }}
+      />
+    </div>
+  )
+}
