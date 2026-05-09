@@ -11,7 +11,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah M.",
+    name: "Elise Bellemare",
     location: "London, ON",
     rating: 5,
     text: "My refrigerator stopped cooling on a Saturday and MyappliancePro came out the same day! The technician was professional, explained the problem clearly, and had it fixed within an hour. Highly recommend!",
@@ -20,7 +20,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Michael T.",
+    name: "Garret Whitmore",
     location: "St. Thomas, ON",
     rating: 5,
     text: "Great service from start to finish. Called in the morning, technician arrived by afternoon. Fixed my washer quickly and the price was exactly what they quoted. Will definitely use again.",
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Jennifer L.",
+    name: "Lachlan MacTavish",
     location: "Woodstock, ON",
     rating: 5,
     text: "I've used MyappliancePro twice now for different appliances. Both times they were prompt, professional, and affordable. It's rare to find such reliable service these days.",
