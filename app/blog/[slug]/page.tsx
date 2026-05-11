@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Calendar,
-  Clock,
   User,
   ArrowLeft,
   ArrowRight,
@@ -51,6 +50,71 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       authors: [post.author],
     },
   }
+}
+
+// Simple markdown-like content renderer
+function renderContent(content: string) {
+  const lines = content.split("\n")
+  const elements: React.ReactNode[] = []
+  let currentList: string[] = []
+  let key = 0
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      elements.push(
+        <ul key={key++} className="my-4 space-y-2 list-none">
+          {currentList.map((item, i) => (
+            <li key={i} className="flex items-start gap-2 text-muted-foreground">
+              <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+              <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+            </li>
+          ))}
+        </ul>
+      )
+      currentList = []
+    }
+  }
+
+  for (const line of lines) {
+    const trimmedLine = line.trim()
+    
+    if (trimmedLine === "") {
+      flushList()
+      continue
+    }
+
+    // H2 heading
+    if (trimmedLine.startsWith("## ")) {
+      flushList()
+      elements.push(
+        <h2 key={key++} className="mt-8 mb-4 text-2xl font-bold text-foreground">
+          {trimmedLine.slice(3)}
+        </h2>
+      )
+      continue
+    }
+
+    // Bullet point
+    if (trimmedLine.startsWith("- ")) {
+      currentList.push(trimmedLine.slice(2))
+      continue
+    }
+
+    // Regular paragraph
+    flushList()
+    elements.push(
+      <p 
+        key={key++} 
+        className="my-4 text-muted-foreground leading-relaxed"
+        dangerouslySetInnerHTML={{ 
+          __html: trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') 
+        }}
+      />
+    )
+  }
+
+  flushList()
+  return elements
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -99,10 +163,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Calendar className="h-4 w-4" />
                 {post.publishedDate}
               </span>
-              <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                {post.readTime}
-              </span>
             </div>
           </div>
         </div>
@@ -112,89 +172,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="py-12 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
-            {/* Introduction */}
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
-              {post.excerpt}
-            </p>
-
-            {/* Table of Contents */}
-            {post.tableOfContents && post.tableOfContents.length > 0 && (
-              <div className="mb-12 rounded-lg bg-secondary p-6">
-                <h2 className="mb-4 text-lg font-semibold text-foreground">
-                  In This Article
-                </h2>
-                <nav>
-                  <ul className="space-y-2">
-                    {post.tableOfContents.map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href={`#section-${index + 1}`}
-                          className="text-primary hover:underline"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div>
-            )}
-
-            {/* Article Sections */}
+            {/* Article Content */}
             <div className="prose prose-lg max-w-none">
-              {post.sections.map((section, index) => (
-                <section key={index} id={`section-${index + 1}`} className="mb-12">
-                  <h2 className="mb-4 text-2xl font-bold text-foreground">
-                    {section.heading}
-                  </h2>
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    {section.content.split("\n\n").map((paragraph, pIndex) => (
-                      <p key={pIndex}>{paragraph}</p>
-                    ))}
-                  </div>
-                  {section.tips && section.tips.length > 0 && (
-                    <div className="mt-6 rounded-lg border-l-4 border-accent bg-accent/10 p-4">
-                      <h4 className="mb-2 font-semibold text-foreground">
-                        Pro Tips:
-                      </h4>
-                      <ul className="space-y-2">
-                        {section.tips.map((tip, tipIndex) => (
-                          <li
-                            key={tipIndex}
-                            className="flex items-start gap-2 text-muted-foreground"
-                          >
-                            <span className="mt-1 text-accent">•</span>
-                            {tip}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </section>
-              ))}
+              {renderContent(post.content)}
             </div>
 
-            {/* Key Takeaways */}
-            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
-              <div className="mb-12 rounded-lg bg-primary/5 p-6">
-                <h3 className="mb-4 text-xl font-bold text-foreground">
-                  Key Takeaways
-                </h3>
-                <ul className="space-y-3">
-                  {post.keyTakeaways.map((takeaway, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
-                        {index + 1}
-                      </span>
-                      <span className="text-muted-foreground">{takeaway}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             {/* CTA Box */}
-            <div className="mb-12 rounded-xl bg-primary p-8 text-center">
+            <div className="my-12 rounded-xl bg-primary p-8 text-center">
               <h3 className="mb-3 text-2xl font-bold text-primary-foreground">
                 Need Professional Help?
               </h3>
@@ -279,7 +263,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ) : (
                 <div />
               )}
-              {nextPost && (
+              {nextPost ? (
                 <Link
                   href={`/blog/${nextPost.slug}`}
                   className="group flex items-center gap-2 text-right text-muted-foreground hover:text-primary"
@@ -290,6 +274,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </div>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
+              ) : (
+                <div />
               )}
             </div>
           </div>
@@ -317,12 +303,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
                         {relatedPost.excerpt}
                       </p>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-4 w-4" />
-                          {relatedPost.readTime}
-                        </span>
-                      </div>
                     </CardContent>
                   </Card>
                 </Link>
