@@ -60,7 +60,7 @@ export function BrandsSection() {
             {visibleBrands.map((brand) => (
               <Link
                 key={brand.slug}
-                href={`/brands/${brand.slug}`}
+                href="/contact"
                 className="group flex items-center justify-center p-8 lg:p-12 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all"
               >
                 <div className="text-center">
