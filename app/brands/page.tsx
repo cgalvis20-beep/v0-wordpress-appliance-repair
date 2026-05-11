@@ -1,18 +1,36 @@
-import type { Metadata } from "next"
+"use client"
+
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { brands } from "@/lib/data/brands"
-import { companyInfo } from "@/lib/data/company-info"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Wrench } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Brands We Service",
-  description: `${companyInfo.name} repairs all major appliance brands including Samsung, LG, Whirlpool, GE, Frigidaire, Bosch, Maytag, and KitchenAid. Expert technicians for every brand.`,
-}
+import { Wrench, ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function BrandsPage() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const brandsPerPage = 2
+  const totalPages = Math.ceil(brands.length / brandsPerPage)
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages)
+  }, [totalPages])
+
+  const goToPrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages)
+  }, [totalPages])
+
+  // Auto-advance every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(goToNext, 4000)
+    return () => clearInterval(interval)
+  }, [goToNext])
+
+  // Get visible brands for current page
+  const startIndex = currentIndex * brandsPerPage
+  const visibleBrands = brands.slice(startIndex, startIndex + brandsPerPage)
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -34,7 +52,7 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      {/* Brands Grid */}
+      {/* Brands Carousel */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
@@ -47,24 +65,61 @@ export default function BrandsPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {brands.map((brand) => (
-              <Link key={brand.slug} href={`/brands/${brand.slug}`}>
-                <Card className="group h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-                  <CardContent className="flex h-full flex-col items-center p-6 text-center">
+          {/* Carousel */}
+          <div className="relative mx-auto max-w-2xl">
+            {/* Navigation arrows */}
+            <button
+              type="button"
+              onClick={goToPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-card border border-border shadow-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
+              aria-label="Previous brands"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              type="button"
+              onClick={goToNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-card border border-border shadow-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
+              aria-label="Next brands"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
+            {/* Brand cards - showing 2 at a time */}
+            <div className="grid grid-cols-2 gap-6">
+              {visibleBrands.map((brand) => (
+                <Card key={brand.slug} className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+                  <CardContent className="flex h-full flex-col items-center p-8 text-center">
                     <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-secondary">
                       <Wrench className="h-10 w-10 text-primary" />
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold text-foreground group-hover:text-primary">
+                    <h3 className="mb-2 text-2xl font-bold text-foreground">
                       {brand.name}
                     </h3>
-                    <p className="flex-1 text-sm text-muted-foreground line-clamp-2">
+                    <p className="flex-1 text-sm text-muted-foreground">
                       {brand.tagline}
                     </p>
                   </CardContent>
                 </Card>
-              </Link>
-            ))}
+              ))}
+            </div>
+
+            {/* Pagination dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-3 rounded-full transition-all ${
+                    index === currentIndex
+                      ? "w-8 bg-primary"
+                      : "w-3 bg-border hover:bg-muted-foreground"
+                  }`}
+                  aria-label={`Go to page ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
