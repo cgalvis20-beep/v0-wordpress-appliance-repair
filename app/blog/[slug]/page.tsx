@@ -197,7 +197,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="border-foreground/30 bg-background text-foreground hover:bg-background/90"
                 >
                   <a href={`tel:${companyInfo.phoneClean}`}>
                     <Phone className="mr-2 h-4 w-4" />
