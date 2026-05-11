@@ -75,6 +75,7 @@ Reach out for the best appliances near me repair in South Western Ontario now.`,
     publishedDate: "2024-02-08",
     author: "My Appliance Pro Team",
     category: "Maintenance Tips",
+    image: "/images/blog/washer-dryer-maintenance.png",
   },
   {
     slug: "diy-vs-professional-repair",
