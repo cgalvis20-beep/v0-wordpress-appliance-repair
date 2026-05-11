@@ -190,12 +190,7 @@ export default function TermsPage() {
                     {companyInfo.phone}
                   </a>
                 </p>
-                <p>
-                  <strong>Website:</strong>{" "}
-                  <a href={companyInfo.website} className="text-primary hover:underline">
-                    {companyInfo.website}
-                  </a>
-                </p>
+                
               </div>
             </div>
           </div>
