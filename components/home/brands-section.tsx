@@ -59,10 +59,13 @@ export function BrandsSection() {
           </button>
 
           {/* Sliding container */}
-          <div className="overflow-hidden mx-8">
+          <div className="mx-8" style={{ overflow: "hidden" }}>
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ 
+                display: "flex",
+                transform: `translateX(-${currentIndex * 100}%)`,
+                transition: "transform 500ms ease-in-out"
+              }}
             >
               {Array.from({ length: totalPages }).map((_, pageIndex) => {
                 const pageStart = pageIndex * brandsPerPage
@@ -70,7 +73,14 @@ export function BrandsSection() {
                 return (
                   <div
                     key={pageIndex}
-                    className="w-full flex-shrink-0 grid grid-cols-2 gap-6 lg:gap-8 px-1"
+                    style={{ 
+                      minWidth: "100%",
+                      flexShrink: 0,
+                      display: "grid",
+                      gridTemplateColumns: "repeat(2, 1fr)",
+                      gap: "1.5rem",
+                      padding: "0 0.25rem"
+                    }}
                   >
                     {pageBrands.map((brand) => (
                       <div
