@@ -107,12 +107,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-primary-foreground/70 text-sm">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>
-                  {companyInfo.address.street}
-                  <br />
-                  {companyInfo.address.city}, {companyInfo.address.province}{" "}
-                  {companyInfo.address.postalCode}
-                </span>
+                <span>London, Ontario. N6C 5H5</span>
               </li>
               <li className="flex items-start gap-3 text-primary-foreground/70 text-sm">
                 <Clock className="h-4 w-4 mt-0.5 shrink-0" />
