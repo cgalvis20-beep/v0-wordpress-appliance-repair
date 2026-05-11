@@ -8,6 +8,7 @@ export interface BlogPost {
   publishedDate: string
   author: string
   category: string
+  image?: string
 }
 
 export const blogPosts: BlogPost[] = [
@@ -41,6 +42,7 @@ Contact My Appliance Pro today or search for appliance repair near me to book yo
     publishedDate: "2024-01-15",
     author: "My Appliance Pro Team",
     category: "Maintenance Tips",
+    image: "/images/blog/refrigerator-repair.png",
   },
   {
     slug: "extend-washer-dryer-life",

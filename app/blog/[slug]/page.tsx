@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import { blogPosts } from "@/lib/data/blog-posts"
 import { companyInfo } from "@/lib/data/company-info"
@@ -172,6 +173,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="py-12 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
+            {/* Featured Image */}
+            {post.image && (
+              <div className="mb-8 overflow-hidden rounded-xl">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={800}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
+            )}
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
               {renderContent(post.content)}
