@@ -180,7 +180,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                         asChild
                         size="lg"
                         variant="outline"
-                        className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                        className="w-full border-border text-foreground hover:bg-muted"
                       >
                         <a href={`tel:${companyInfo.phoneClean}`}>
                           <Phone className="h-4 w-4 mr-2" />
