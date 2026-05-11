@@ -104,6 +104,7 @@ Searching for someone to repair home appliances near me? Our team handles everyt
     publishedDate: "2024-03-05",
     author: "My Appliance Pro Team",
     category: "Tips & Advice",
+    image: "/images/blog/diy-vs-professional-repair.png",
   },
   {
     slug: "choosing-right-technician",
