@@ -39,7 +39,7 @@ const pricingFAQs = [
   {
     question: "How much does appliance repair cost?",
     answer:
-      "Repair costs vary depending on the appliance type and the specific issue. We charge a diagnostic fee of $89 which is waived if you proceed with the repair. After diagnosis, we provide an upfront quote so you know exactly what to expect before any work begins.",
+      "Repair costs vary depending on the appliance type and the specific issue. We charge a diagnostic fee of $99, which 35% is waived if you proceed with the repair. After diagnosis, we provide an upfront quote so you know exactly what to expect before any work begins.",
   },
   {
     question: "Do you charge for estimates?",
