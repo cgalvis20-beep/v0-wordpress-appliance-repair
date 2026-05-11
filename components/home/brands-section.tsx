@@ -12,17 +12,14 @@ export function BrandsSection() {
   const totalPages = Math.ceil(brands.length / brandsPerPage)
 
   const handleNext = () => {
-    console.log("[v0] Next clicked, current:", currentIndex, "total:", totalPages)
     setCurrentIndex((prev) => (prev + 1) % totalPages)
   }
 
   const handlePrev = () => {
-    console.log("[v0] Prev clicked, current:", currentIndex, "total:", totalPages)
     setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages)
   }
 
   const handleDotClick = (index: number) => {
-    console.log("[v0] Dot clicked:", index)
     setCurrentIndex(index)
   }
 
@@ -63,18 +60,17 @@ export function BrandsSection() {
             <ChevronRight className="h-5 w-5" />
           </button>
 
-          {/* Brand cards - simple approach */}
+          {/* Brand cards - display only */}
           <div className="grid grid-cols-2 gap-6 lg:gap-8">
             {visibleBrands.map((brand) => (
-              <Link
+              <div
                 key={brand.slug}
-                href="/contact"
-                className="group flex items-center justify-center p-8 lg:p-12 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all"
+                className="flex items-center justify-center p-8 lg:p-12 rounded-xl border border-border bg-card"
               >
-                <span className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <span className="text-2xl lg:text-3xl font-bold text-foreground">
                   {brand.name}
                 </span>
-              </Link>
+              </div>
             ))}
           </div>
 
