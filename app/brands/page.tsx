@@ -5,7 +5,7 @@ import { companyInfo } from "@/lib/data/company-info"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Wrench } from "lucide-react"
+import { Wrench } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Brands We Service",
@@ -58,13 +58,9 @@ export default function BrandsPage() {
                     <h3 className="mb-2 text-xl font-semibold text-foreground group-hover:text-primary">
                       {brand.name}
                     </h3>
-                    <p className="mb-4 flex-1 text-sm text-muted-foreground line-clamp-2">
+                    <p className="flex-1 text-sm text-muted-foreground line-clamp-2">
                       {brand.tagline}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                      Learn More
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
                   </CardContent>
                 </Card>
               </Link>
