@@ -53,7 +53,7 @@ export function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-balance">
-            Why Choose MyappliancePro?
+            Why Choose My Appliance Pro?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
             We&apos;re committed to providing the best appliance repair experience. Here&apos;s what sets us apart.
