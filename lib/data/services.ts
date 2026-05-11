@@ -15,14 +15,14 @@ export const services: Service[] = [
   {
     slug: "refrigerator-repair",
     title: "Refrigerator Repair",
-    metaTitle: "Refrigerator Repair London ON | Same-Day Service | MyappliancePro",
+    metaTitle: "Refrigerator Repair London ON | Same-Day Service | My Appliance Pro",
     metaDescription:
       "Expert refrigerator repair in London and surrounding areas. We fix all brands including Samsung, LG, Whirlpool. Same-day service available. Call now!",
     icon: "Refrigerator",
     shortDescription:
       "Expert refrigerator repair for all major brands. We fix cooling issues, ice makers, water dispensers, and more.",
     longDescription:
-      "Is your refrigerator not cooling properly? Don't let spoiled food ruin your day. Our certified technicians specialize in diagnosing and repairing all refrigerator problems quickly and efficiently. We service all major brands including Samsung, LG, Whirlpool, GE, Frigidaire, and more. With same-day service available and a 90-day warranty on all repairs, MyappliancePro is your trusted choice for refrigerator repair in London and surrounding areas.",
+      "Is your refrigerator not cooling properly? Don't let spoiled food ruin your day. Our certified technicians specialize in diagnosing and repairing all refrigerator problems quickly and efficiently. We service all major brands including Samsung, LG, Whirlpool, GE, Frigidaire, and more. With same-day service available and a 90-day warranty on all repairs, My Appliance Pro is your trusted choice for refrigerator repair in London and surrounding areas.",
     commonProblems: [
       "Refrigerator not cooling",
       "Ice maker not working",
@@ -61,14 +61,14 @@ export const services: Service[] = [
   {
     slug: "washer-repair",
     title: "Washer Repair",
-    metaTitle: "Washing Machine Repair London ON | All Brands | MyappliancePro",
+    metaTitle: "Washing Machine Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
       "Professional washer repair in London, Ontario. Fix leaks, spin issues, drainage problems. Same-day service for all brands. Call for fast service!",
     icon: "WashingMachine",
     shortDescription:
       "Professional washing machine repair. We fix leaks, spin cycle issues, drainage problems, and more.",
     longDescription:
-      "A broken washing machine can disrupt your entire household routine. Our expert technicians quickly diagnose and repair all washer problems, from simple fixes to complex repairs. We service top-load, front-load, and stackable washers from all major manufacturers. Don't let dirty laundry pile up - call MyappliancePro for fast, reliable washer repair.",
+      "A broken washing machine can disrupt your entire household routine. Our expert technicians quickly diagnose and repair all washer problems, from simple fixes to complex repairs. We service top-load, front-load, and stackable washers from all major manufacturers. Don't let dirty laundry pile up - call My Appliance Pro for fast, reliable washer repair.",
     commonProblems: [
       "Washer won't start",
       "Not draining properly",
@@ -107,14 +107,14 @@ export const services: Service[] = [
   {
     slug: "dryer-repair",
     title: "Dryer Repair",
-    metaTitle: "Dryer Repair London ON | Fast Service | MyappliancePro",
+    metaTitle: "Dryer Repair London ON | Fast Service | My Appliance Pro",
     metaDescription:
       "Expert dryer repair in London and area. Fix heating issues, tumbling problems, strange noises. Same-day appointments. All brands serviced.",
     icon: "Fan",
     shortDescription:
       "Fast dryer repair service. We fix heating issues, tumbling problems, noisy drums, and more.",
     longDescription:
-      "Is your dryer not heating or taking forever to dry clothes? A malfunctioning dryer wastes energy and time. Our certified technicians repair all dryer types including gas and electric models. We diagnose problems accurately and fix them right the first time. Trust MyappliancePro for professional dryer repair in London and surrounding communities.",
+      "Is your dryer not heating or taking forever to dry clothes? A malfunctioning dryer wastes energy and time. Our certified technicians repair all dryer types including gas and electric models. We diagnose problems accurately and fix them right the first time. Trust My Appliance Pro for professional dryer repair in London and surrounding communities.",
     commonProblems: [
       "Dryer not heating",
       "Takes too long to dry",
@@ -153,7 +153,7 @@ export const services: Service[] = [
   {
     slug: "dishwasher-repair",
     title: "Dishwasher Repair",
-    metaTitle: "Dishwasher Repair London ON | Expert Service | MyappliancePro",
+    metaTitle: "Dishwasher Repair London ON | Expert Service | My Appliance Pro",
     metaDescription:
       "Professional dishwasher repair in London. Not cleaning? Not draining? We fix all brands quickly. Same-day service available. Call now!",
     icon: "Sparkles",
@@ -199,14 +199,14 @@ export const services: Service[] = [
   {
     slug: "oven-repair",
     title: "Oven Repair",
-    metaTitle: "Oven Repair London ON | All Brands | MyappliancePro",
+    metaTitle: "Oven Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
       "Expert oven repair in London, Ontario. Not heating? Temperature issues? We fix all oven types and brands. Same-day service available.",
     icon: "Flame",
     shortDescription:
       "Expert oven repair for gas and electric models. We fix heating issues, temperature problems, and more.",
     longDescription:
-      "A malfunctioning oven can put your meal plans on hold. Our certified technicians repair all types of ovens including conventional, convection, gas, and electric models. From heating elements to temperature sensors, we have the expertise to fix it right. Get your oven back to perfect working condition with MyappliancePro.",
+      "A malfunctioning oven can put your meal plans on hold. Our certified technicians repair all types of ovens including conventional, convection, gas, and electric models. From heating elements to temperature sensors, we have the expertise to fix it right. Get your oven back to perfect working condition with My Appliance Pro.",
     commonProblems: [
       "Oven not heating",
       "Uneven cooking",
@@ -245,14 +245,14 @@ export const services: Service[] = [
   {
     slug: "stove-repair",
     title: "Stove Repair",
-    metaTitle: "Stove Repair London ON | Gas & Electric | MyappliancePro",
+    metaTitle: "Stove Repair London ON | Gas & Electric | My Appliance Pro",
     metaDescription:
       "Professional stove repair in London. Burner not working? Ignition issues? We repair all stove types. Same-day service. Call now!",
     icon: "CookingPot",
     shortDescription:
       "Professional stove repair for all types. We fix burner issues, ignition problems, and more.",
     longDescription:
-      "Whether you have a gas or electric stove, our technicians have the skills to diagnose and repair any issue. From burners that won't light to control knobs that don't work, we fix it all. Don't let a broken stove keep you from cooking. Contact MyappliancePro for fast, reliable stove repair service.",
+      "Whether you have a gas or electric stove, our technicians have the skills to diagnose and repair any issue. From burners that won't light to control knobs that don't work, we fix it all. Don't let a broken stove keep you from cooking. Contact My Appliance Pro for fast, reliable stove repair service.",
     commonProblems: [
       "Burner not lighting",
       "Uneven flame",
@@ -291,14 +291,14 @@ export const services: Service[] = [
   {
     slug: "range-repair",
     title: "Range Repair",
-    metaTitle: "Range Repair London ON | Expert Service | MyappliancePro",
+    metaTitle: "Range Repair London ON | Expert Service | My Appliance Pro",
     metaDescription:
       "Expert range repair in London. Cooktop and oven issues? We fix all range types and brands. Same-day appointments available.",
     icon: "ChefHat",
     shortDescription:
       "Comprehensive range repair service. We fix both cooktop and oven components.",
     longDescription:
-      "Your range combines cooktop and oven functionality, and problems with either can disrupt your cooking. Our technicians are trained to repair all range types, from freestanding to slide-in models. We service both the cooktop and oven components, ensuring your entire range works perfectly. Trust MyappliancePro for complete range repair solutions.",
+      "Your range combines cooktop and oven functionality, and problems with either can disrupt your cooking. Our technicians are trained to repair all range types, from freestanding to slide-in models. We service both the cooktop and oven components, ensuring your entire range works perfectly. Trust My Appliance Pro for complete range repair solutions.",
     commonProblems: [
       "Oven not heating",
       "Burners not working",
@@ -337,14 +337,14 @@ export const services: Service[] = [
   {
     slug: "freezer-repair",
     title: "Freezer Repair",
-    metaTitle: "Freezer Repair London ON | Fast Service | MyappliancePro",
+    metaTitle: "Freezer Repair London ON | Fast Service | My Appliance Pro",
     metaDescription:
       "Professional freezer repair in London and area. Not freezing? Frost buildup? We fix all freezer types. Same-day service available.",
     icon: "Snowflake",
     shortDescription:
       "Expert freezer repair service. We fix cooling issues, frost buildup, and more.",
     longDescription:
-      "A malfunctioning freezer puts your frozen goods at risk. Whether you have a chest freezer, upright freezer, or built-in unit, our technicians can diagnose and repair any issue quickly. From compressor problems to defrost system failures, we have the expertise to restore your freezer to optimal performance. Don't lose your frozen food - call MyappliancePro today.",
+      "A malfunctioning freezer puts your frozen goods at risk. Whether you have a chest freezer, upright freezer, or built-in unit, our technicians can diagnose and repair any issue quickly. From compressor problems to defrost system failures, we have the expertise to restore your freezer to optimal performance. Don't lose your frozen food - call My Appliance Pro today.",
     commonProblems: [
       "Not freezing",
       "Too cold or too warm",
@@ -383,14 +383,14 @@ export const services: Service[] = [
   {
     slug: "microwave-repair",
     title: "Microwave Repair",
-    metaTitle: "Microwave Repair London ON | All Brands | MyappliancePro",
+    metaTitle: "Microwave Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
       "Expert microwave repair in London. Not heating? Turntable issues? We fix countertop and built-in microwaves. Call for service!",
     icon: "Zap",
     shortDescription:
       "Fast microwave repair for countertop and built-in units. We fix heating issues and more.",
     longDescription:
-      "Microwaves are essential for quick meals and reheating. When yours stops working, you need fast service. Our technicians repair all microwave types including countertop, over-the-range, and built-in models. From magnetron issues to control panel problems, we fix it all. Get your microwave working again with MyappliancePro.",
+      "Microwaves are essential for quick meals and reheating. When yours stops working, you need fast service. Our technicians repair all microwave types including countertop, over-the-range, and built-in models. From magnetron issues to control panel problems, we fix it all. Get your microwave working again with My Appliance Pro.",
     commonProblems: [
       "Not heating",
       "Turntable not spinning",
@@ -429,14 +429,14 @@ export const services: Service[] = [
   {
     slug: "cooktop-repair",
     title: "Cooktop Repair",
-    metaTitle: "Cooktop Repair London ON | Gas & Electric | MyappliancePro",
+    metaTitle: "Cooktop Repair London ON | Gas & Electric | My Appliance Pro",
     metaDescription:
       "Professional cooktop repair in London. Gas, electric, and induction cooktops. Burner issues? We fix all brands. Same-day service.",
     icon: "Gauge",
     shortDescription:
       "Professional cooktop repair for gas, electric, and induction models.",
     longDescription:
-      "Whether you have a gas, electric, or induction cooktop, our technicians have the expertise to repair it. We fix burner issues, control problems, glass damage, and more. Don't let a broken cooktop keep you from cooking. Contact MyappliancePro for fast, professional cooktop repair service in London and surrounding areas.",
+      "Whether you have a gas, electric, or induction cooktop, our technicians have the expertise to repair it. We fix burner issues, control problems, glass damage, and more. Don't let a broken cooktop keep you from cooking. Contact My Appliance Pro for fast, professional cooktop repair service in London and surrounding areas.",
     commonProblems: [
       "Burner not heating",
       "Uneven heat",
@@ -475,7 +475,7 @@ export const services: Service[] = [
   {
     slug: "range-hood-repair",
     title: "Range Hood Repair",
-    metaTitle: "Range Hood Repair London ON | All Brands | MyappliancePro",
+    metaTitle: "Range Hood Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
       "Expert range hood repair in London. Fan not working? Light issues? We repair all range hood types. Call for same-day service!",
     icon: "Wind",

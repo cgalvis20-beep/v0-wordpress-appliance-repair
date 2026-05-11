@@ -12,11 +12,11 @@ export const brands: Brand[] = [
   {
     slug: "samsung",
     name: "Samsung",
-    metaTitle: "Samsung Appliance Repair London ON | Certified Service | MyappliancePro",
+    metaTitle: "Samsung Appliance Repair London ON | Certified Service | My Appliance Pro",
     metaDescription:
       "Expert Samsung appliance repair in London. We fix Samsung refrigerators, washers, dryers, dishwashers. Certified technicians. Call now!",
     description:
-      "MyappliancePro is your trusted Samsung appliance repair specialist in London and surrounding areas. Our technicians are trained to diagnose and repair all Samsung appliances, from smart refrigerators to high-efficiency washers. We use quality parts and back every repair with our 90-day warranty.",
+      "My Appliance Pro is your trusted Samsung appliance repair specialist in London and surrounding areas. Our technicians are trained to diagnose and repair all Samsung appliances, from smart refrigerators to high-efficiency washers. We use quality parts and back every repair with our 90-day warranty.",
     appliancesServiced: [
       "Refrigerators",
       "Washers",
@@ -36,11 +36,11 @@ export const brands: Brand[] = [
   {
     slug: "lg",
     name: "LG",
-    metaTitle: "LG Appliance Repair London ON | Expert Service | MyappliancePro",
+    metaTitle: "LG Appliance Repair London ON | Expert Service | My Appliance Pro",
     metaDescription:
-      "Professional LG appliance repair in London. Refrigerators, washers, dryers, dishwashers. Same-day service. Call MyappliancePro!",
+      "Professional LG appliance repair in London. Refrigerators, washers, dryers, dishwashers. Same-day service. Call My Appliance Pro!",
     description:
-      "Trust MyappliancePro for all your LG appliance repair needs. Our experienced technicians specialize in LG's innovative appliances, including ThinQ-enabled smart appliances. Whether it's a refrigerator, washer, dryer, or any other LG appliance, we have the expertise to fix it right.",
+      "Trust My Appliance Pro for all your LG appliance repair needs. Our experienced technicians specialize in LG's innovative appliances, including ThinQ-enabled smart appliances. Whether it's a refrigerator, washer, dryer, or any other LG appliance, we have the expertise to fix it right.",
     appliancesServiced: [
       "Refrigerators",
       "Washers",
@@ -60,11 +60,11 @@ export const brands: Brand[] = [
   {
     slug: "whirlpool",
     name: "Whirlpool",
-    metaTitle: "Whirlpool Appliance Repair London ON | All Models | MyappliancePro",
+    metaTitle: "Whirlpool Appliance Repair London ON | All Models | My Appliance Pro",
     metaDescription:
       "Reliable Whirlpool appliance repair in London. We service all Whirlpool models. Same-day appointments. Call for expert service!",
     description:
-      "MyappliancePro provides expert Whirlpool appliance repair throughout London and the surrounding region. Whirlpool has been a trusted name in home appliances for decades, and our technicians are fully trained to repair all Whirlpool products efficiently and affordably.",
+      "My Appliance Pro provides expert Whirlpool appliance repair throughout London and the surrounding region. Whirlpool has been a trusted name in home appliances for decades, and our technicians are fully trained to repair all Whirlpool products efficiently and affordably.",
     appliancesServiced: [
       "Refrigerators",
       "Washers",
@@ -85,11 +85,11 @@ export const brands: Brand[] = [
   {
     slug: "ge",
     name: "GE",
-    metaTitle: "GE Appliance Repair London ON | Factory-Trained | MyappliancePro",
+    metaTitle: "GE Appliance Repair London ON | Factory-Trained | My Appliance Pro",
     metaDescription:
       "Expert GE appliance repair in London, Ontario. All GE appliances serviced. Factory-trained technicians. Call for same-day service!",
     description:
-      "GE appliances are known for their reliability and innovation. When your GE appliance needs repair, trust the experts at MyappliancePro. Our factory-trained technicians have the knowledge and tools to repair any GE appliance, from classic models to the latest smart appliances.",
+      "GE appliances are known for their reliability and innovation. When your GE appliance needs repair, trust the experts at My Appliance Pro. Our factory-trained technicians have the knowledge and tools to repair any GE appliance, from classic models to the latest smart appliances.",
     appliancesServiced: [
       "Refrigerators",
       "Washers",
@@ -110,11 +110,11 @@ export const brands: Brand[] = [
   {
     slug: "frigidaire",
     name: "Frigidaire",
-    metaTitle: "Frigidaire Appliance Repair London ON | Fast Service | MyappliancePro",
+    metaTitle: "Frigidaire Appliance Repair London ON | Fast Service | My Appliance Pro",
     metaDescription:
       "Professional Frigidaire appliance repair in London. Refrigerators, freezers, ranges, dishwashers. Quick service. Call today!",
     description:
-      "Frigidaire has been a kitchen staple for over a century. MyappliancePro technicians are experts in Frigidaire appliance repair, handling everything from refrigerators and freezers to ranges and dishwashers. We provide fast, reliable service backed by our satisfaction guarantee.",
+      "Frigidaire has been a kitchen staple for over a century. My Appliance Pro technicians are experts in Frigidaire appliance repair, handling everything from refrigerators and freezers to ranges and dishwashers. We provide fast, reliable service backed by our satisfaction guarantee.",
     appliancesServiced: [
       "Refrigerators",
       "Freezers",
@@ -134,11 +134,11 @@ export const brands: Brand[] = [
   {
     slug: "maytag",
     name: "Maytag",
-    metaTitle: "Maytag Appliance Repair London ON | Trusted Service | MyappliancePro",
+    metaTitle: "Maytag Appliance Repair London ON | Trusted Service | My Appliance Pro",
     metaDescription:
-      "Reliable Maytag appliance repair in London. Expert service for all Maytag appliances. Same-day appointments. Call MyappliancePro!",
+      "Reliable Maytag appliance repair in London. Expert service for all Maytag appliances. Same-day appointments. Call My Appliance Pro!",
     description:
-      "Maytag appliances are built to last, but when they need repair, MyappliancePro is here to help. Our technicians are experienced with all Maytag products and use quality parts to ensure lasting repairs. Trust us to keep your Maytag appliances running strong.",
+      "Maytag appliances are built to last, but when they need repair, My Appliance Pro is here to help. Our technicians are experienced with all Maytag products and use quality parts to ensure lasting repairs. Trust us to keep your Maytag appliances running strong.",
     appliancesServiced: [
       "Washers",
       "Dryers",
@@ -157,11 +157,11 @@ export const brands: Brand[] = [
   {
     slug: "kitchenaid",
     name: "KitchenAid",
-    metaTitle: "KitchenAid Appliance Repair London ON | Premium Service | MyappliancePro",
+    metaTitle: "KitchenAid Appliance Repair London ON | Premium Service | My Appliance Pro",
     metaDescription:
       "Expert KitchenAid appliance repair in London. Premium service for KitchenAid refrigerators, dishwashers, ranges. Call now!",
     description:
-      "KitchenAid represents premium kitchen performance. MyappliancePro provides the expert service your KitchenAid appliances deserve. Our technicians understand the craftsmanship behind KitchenAid products and deliver repairs that maintain their high standards of performance.",
+      "KitchenAid represents premium kitchen performance. My Appliance Pro provides the expert service your KitchenAid appliances deserve. Our technicians understand the craftsmanship behind KitchenAid products and deliver repairs that maintain their high standards of performance.",
     appliancesServiced: [
       "Refrigerators",
       "Dishwashers",
@@ -181,11 +181,11 @@ export const brands: Brand[] = [
   {
     slug: "bosch",
     name: "Bosch",
-    metaTitle: "Bosch Appliance Repair London ON | German Engineering | MyappliancePro",
+    metaTitle: "Bosch Appliance Repair London ON | German Engineering | My Appliance Pro",
     metaDescription:
       "Professional Bosch appliance repair in London. Expert service for Bosch dishwashers, washers, dryers, refrigerators. Call today!",
     description:
-      "Bosch appliances are renowned for German engineering and quality. MyappliancePro technicians are trained to service Bosch's precision appliances, from their whisper-quiet dishwashers to compact laundry solutions. We provide the expert care your Bosch appliances need.",
+      "Bosch appliances are renowned for German engineering and quality. My Appliance Pro technicians are trained to service Bosch's precision appliances, from their whisper-quiet dishwashers to compact laundry solutions. We provide the expert care your Bosch appliances need.",
     appliancesServiced: [
       "Dishwashers",
       "Washers",
