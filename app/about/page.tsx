@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { CheckCircle, Users, Calendar, Award, MapPin, ArrowRight } from "lucide-react"
+import { CheckCircle, Users, Calendar, Award, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
@@ -16,7 +16,7 @@ const stats = [
   { icon: Users, value: "5,000+", label: "Happy Customers" },
   { icon: Calendar, value: "10+", label: "Years Experience" },
   { icon: Award, value: "4.9", label: "Star Rating" },
-  { icon: MapPin, value: "8", label: "Cities Served" },
+  { icon: Award, value: "90-Day", label: "Warranty" },
 ]
 
 const values = [
