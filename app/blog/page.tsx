@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { blogPosts } from "@/lib/data/blog-posts"
 import { companyInfo } from "@/lib/data/company-info"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, ArrowRight, User } from "lucide-react"
+import { Calendar, ArrowRight, User } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Appliance Repair Tips & Guides",
@@ -43,12 +44,22 @@ export default function BlogPage() {
           <Link href={`/blog/${featuredPost.slug}`}>
             <Card className="group overflow-hidden transition-all hover:shadow-lg">
               <div className="grid lg:grid-cols-2">
-                <div className="aspect-video bg-secondary lg:aspect-auto">
-                  <div className="flex h-full items-center justify-center">
-                    <span className="text-6xl text-muted-foreground/30">
-                      {featuredPost.category === "Maintenance" ? "🔧" : "💡"}
-                    </span>
-                  </div>
+                <div className="aspect-video bg-secondary lg:aspect-auto relative overflow-hidden">
+                  {featuredPost.image ? (
+                    <Image
+                      src={featuredPost.image}
+                      alt={featuredPost.title}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center">
+                      <span className="text-6xl text-muted-foreground/30">
+                        {featuredPost.category === "Maintenance" ? "🔧" : "💡"}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <CardContent className="flex flex-col justify-center p-8">
                   <Badge className="mb-4 w-fit">{featuredPost.category}</Badge>
@@ -67,10 +78,7 @@ export default function BlogPage() {
                       <Calendar className="h-4 w-4" />
                       {featuredPost.publishedDate}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      {featuredPost.readTime}
-                    </span>
+                    
                   </div>
                 </CardContent>
               </div>
@@ -87,12 +95,21 @@ export default function BlogPage() {
             {recentPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <Card className="group h-full overflow-hidden transition-all hover:shadow-lg hover:border-primary/50">
-                  <div className="aspect-video bg-muted">
-                    <div className="flex h-full items-center justify-center">
-                      <span className="text-4xl text-muted-foreground/30">
-                        {post.category === "Maintenance" ? "🔧" : post.category === "Troubleshooting" ? "🔍" : "💡"}
-                      </span>
-                    </div>
+                  <div className="aspect-video bg-muted relative overflow-hidden">
+                    {post.image ? (
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center">
+                        <span className="text-4xl text-muted-foreground/30">
+                          {post.category === "Maintenance" ? "🔧" : post.category === "Troubleshooting" ? "🔍" : "💡"}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <CardContent className="p-6">
                     <Badge variant="secondary" className="mb-3">
@@ -104,14 +121,10 @@ export default function BlogPage() {
                     <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                    <div className="flex items-center text-sm text-muted-foreground">
                       <span className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
                         {post.publishedDate}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {post.readTime}
                       </span>
                     </div>
                   </CardContent>
