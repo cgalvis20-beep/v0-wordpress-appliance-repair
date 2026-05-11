@@ -12,7 +12,7 @@ export function CTABanner() {
             Ready to Get Your Appliance Fixed?
           </h2>
           <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto text-pretty">
-            Don&apos;t let a broken appliance disrupt your life. Book your repair appointment today and experience the MyappliancePro difference.
+            Don&apos;t let a broken appliance disrupt your life. Book your repair appointment today and experience the My Appliance Pro difference.
           </p>
 
           {/* CTAs */}
@@ -31,11 +31,11 @@ export function CTABanner() {
               size="lg"
               variant="outline"
               asChild
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
+              className="border-foreground/30 bg-background text-foreground hover:bg-background/90 text-base px-8"
             >
               <a href={`tel:${companyInfo.phoneClean}`}>
                 <Phone className="h-5 w-5 mr-2" />
-                Call {companyInfo.phone}
+                {companyInfo.phone}
               </a>
             </Button>
           </div>
