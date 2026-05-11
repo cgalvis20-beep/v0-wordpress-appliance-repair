@@ -24,7 +24,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-primary text-primary-foreground">
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -36,7 +36,7 @@ export function Footer() {
               </div>
               <span className="font-bold text-xl">{companyInfo.name}</span>
             </div>
-            <p className="text-background/70 text-sm leading-relaxed">
+            <p className="text-primary-foreground/70 text-sm leading-relaxed">
               {companyInfo.description}
             </p>
           </div>
@@ -49,7 +49,7 @@ export function Footer() {
                 <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="text-background/70 hover:text-accent transition-colors text-sm"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {service.name}
                   </Link>
@@ -74,7 +74,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-background/70 hover:text-accent transition-colors text-sm"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -90,7 +90,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${companyInfo.phoneClean}`}
-                  className="flex items-start gap-3 text-background/70 hover:text-accent transition-colors text-sm"
+                  className="flex items-start gap-3 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Phone className="h-4 w-4 mt-0.5 shrink-0" />
                   <span>{companyInfo.phone}</span>
@@ -99,13 +99,13 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${companyInfo.email}`}
-                  className="flex items-start gap-3 text-background/70 hover:text-accent transition-colors text-sm"
+                  className="flex items-start gap-3 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Mail className="h-4 w-4 mt-0.5 shrink-0" />
                   <span>{companyInfo.email}</span>
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-background/70 text-sm">
+              <li className="flex items-start gap-3 text-primary-foreground/70 text-sm">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
                 <span>
                   {companyInfo.address.street}
@@ -114,7 +114,7 @@ export function Footer() {
                   {companyInfo.address.postalCode}
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-background/70 text-sm">
+              <li className="flex items-start gap-3 text-primary-foreground/70 text-sm">
                 <Clock className="h-4 w-4 mt-0.5 shrink-0" />
                 <span>
                   Mon-Fri: {companyInfo.hours.weekdays}
@@ -129,18 +129,18 @@ export function Footer() {
         </div>
 
         {/* Service areas */}
-        <div className="mt-12 pt-8 border-t border-background/20">
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <h3 className="font-semibold mb-3">Service Areas</h3>
           <div className="flex flex-wrap gap-2">
             {serviceAreas.map((area) => (
               <Link
                 key={area}
                 href={`/locations/${area.toLowerCase().replace(/\.\s/g, "").replace(/\s/g, "-")}`}
-                className="text-sm text-background/70 hover:text-accent transition-colors"
+                className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
               >
                 {area}
                 {area !== serviceAreas[serviceAreas.length - 1] && (
-                  <span className="ml-2 text-background/40">|</span>
+                  <span className="ml-2 text-primary-foreground/40">|</span>
                 )}
               </Link>
             ))}
@@ -149,9 +149,9 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-background/20">
+      <div className="border-t border-primary-foreground/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-background/60">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
             <p>
               &copy; {new Date().getFullYear()} {companyInfo.name}. All rights
               reserved.
