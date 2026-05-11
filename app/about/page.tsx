@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const stats = [
   { icon: Users, value: "100+", label: "Happy Customers" },
   { icon: Calendar, value: "10+", label: "Years Experience" },
-  { icon: Star, value: "Five", label: "Stars" },
+  { icon: Star, value: "Five Stars", label: "Rated" },
   { icon: Wrench, value: "90-Day", label: "Warranty" },
 ]
 
