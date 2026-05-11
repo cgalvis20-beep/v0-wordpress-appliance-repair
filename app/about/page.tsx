@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { icon: Users, value: "5,000+", label: "Happy Customers" },
+  { icon: Users, value: "100+", label: "Happy Customers" },
   { icon: Calendar, value: "10+", label: "Years Experience" },
   { icon: Award, value: "4.9", label: "Star Rating" },
   { icon: Wrench, value: "90-Day", label: "Warranty" },
