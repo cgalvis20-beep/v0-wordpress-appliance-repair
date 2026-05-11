@@ -85,14 +85,48 @@ export default function LocationsPage() {
                 </li>
               </ul>
             </div>
-            <div className="relative aspect-square lg:aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/20 via-muted to-accent/20 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-5xl font-bold text-primary mb-2">8</div>
-                <div className="text-lg text-foreground font-medium">
-                  Cities Served
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  Throughout SW Ontario
+            <div className="relative aspect-square lg:aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/10 via-muted to-accent/10 overflow-hidden border border-border">
+              {/* Stylized map illustration */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-full h-full p-8">
+                  {/* Map dots representing cities */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      {/* Central London marker */}
+                      <div className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                        <div className="h-4 w-4 rounded-full bg-primary animate-pulse" />
+                        <span className="mt-1 text-xs font-medium text-foreground bg-background/80 px-2 py-0.5 rounded">
+                          London
+                        </span>
+                      </div>
+                      {/* Surrounding cities */}
+                      {[
+                        { name: "Woodstock", x: 60, y: -50 },
+                        { name: "St. Thomas", x: -20, y: 70 },
+                        { name: "Strathroy", x: -70, y: -30 },
+                        { name: "Ingersoll", x: 80, y: 20 },
+                        { name: "Tillsonburg", x: 40, y: 80 },
+                        { name: "Aylmer", x: 100, y: 60 },
+                        { name: "Dorchester", x: 20, y: 40 },
+                      ].map((city) => (
+                        <div
+                          key={city.name}
+                          className="absolute flex flex-col items-center"
+                          style={{
+                            transform: `translate(${city.x}px, ${city.y}px)`,
+                          }}
+                        >
+                          <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+                          <span className="mt-0.5 text-[10px] text-muted-foreground whitespace-nowrap">
+                            {city.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Service area circle */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border-2 border-dashed border-primary/30" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-dashed border-accent/30" />
                 </div>
               </div>
             </div>
