@@ -16,8 +16,6 @@ export const companyInfo = {
     sunday: "10:00 AM - 4:00 PM",
   },
   social: {
-    facebook: "https://facebook.com/myappliancepro",
-    instagram: "https://instagram.com/myappliancepro",
     google: "https://g.page/myappliancepro",
   },
   calendlyUrl: "https://calendly.com/myappliancepro/service-call",

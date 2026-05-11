@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react"
+import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { companyInfo, serviceAreas } from "@/lib/data/company-info"
 
 const services = [
@@ -39,26 +39,6 @@ export function Footer() {
             <p className="text-background/70 text-sm leading-relaxed">
               {companyInfo.description}
             </p>
-            <div className="flex gap-4">
-              <a
-                href={companyInfo.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-background/70 hover:text-accent transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href={companyInfo.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-background/70 hover:text-accent transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Services */}
