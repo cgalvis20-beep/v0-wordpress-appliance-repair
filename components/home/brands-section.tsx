@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -11,13 +11,24 @@ export function BrandsSection() {
   const brandsPerPage = 2
   const totalPages = Math.ceil(brands.length / brandsPerPage)
 
-  const nextSlide = useCallback(() => {
+  const handleNext = () => {
+    console.log("[v0] Next clicked, current:", currentIndex, "total:", totalPages)
     setCurrentIndex((prev) => (prev + 1) % totalPages)
-  }, [totalPages])
+  }
 
-  const prevSlide = useCallback(() => {
+  const handlePrev = () => {
+    console.log("[v0] Prev clicked, current:", currentIndex, "total:", totalPages)
     setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages)
-  }, [totalPages])
+  }
+
+  const handleDotClick = (index: number) => {
+    console.log("[v0] Dot clicked:", index)
+    setCurrentIndex(index)
+  }
+
+  // Get current visible brands
+  const startIndex = currentIndex * brandsPerPage
+  const visibleBrands = brands.slice(startIndex, startIndex + brandsPerPage)
 
   return (
     <section className="py-16 lg:py-24 bg-background">
@@ -33,57 +44,38 @@ export function BrandsSection() {
         </div>
 
         {/* Brand carousel */}
-        <div className="relative max-w-2xl mx-auto">
+        <div className="relative max-w-2xl mx-auto px-12">
           {/* Navigation arrows */}
           <button
             type="button"
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 lg:-translate-x-14 z-10 h-10 w-10 rounded-full bg-card border border-border shadow-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all cursor-pointer"
+            onClick={handlePrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-card border border-border shadow-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
             aria-label="Previous brands"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             type="button"
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 lg:translate-x-14 z-10 h-10 w-10 rounded-full bg-card border border-border shadow-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all cursor-pointer"
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 rounded-full bg-card border border-border shadow-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
             aria-label="Next brands"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
 
-          {/* Carousel container with overflow hidden */}
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-              {/* Create slides - each slide contains 2 brands */}
-              {Array.from({ length: totalPages }).map((_, pageIndex) => (
-                <div
-                  key={pageIndex}
-                  className="w-full flex-shrink-0 grid grid-cols-2 gap-6 lg:gap-8 px-1"
-                >
-                  {brands
-                    .slice(pageIndex * brandsPerPage, pageIndex * brandsPerPage + brandsPerPage)
-                    .map((brand) => (
-                      <Link
-                        key={brand.slug}
-                        href="/contact"
-                        className="group flex items-center justify-center p-8 lg:p-12 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all"
-                      >
-                        <div className="text-center">
-                          <span className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
-                            {brand.name}
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
-                </div>
-              ))}
-            </div>
+          {/* Brand cards - simple approach */}
+          <div className="grid grid-cols-2 gap-6 lg:gap-8">
+            {visibleBrands.map((brand) => (
+              <Link
+                key={brand.slug}
+                href="/contact"
+                className="group flex items-center justify-center p-8 lg:p-12 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all"
+              >
+                <span className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  {brand.name}
+                </span>
+              </Link>
+            ))}
           </div>
 
           {/* Pagination dots */}
@@ -92,8 +84,8 @@ export function BrandsSection() {
               <button
                 key={index}
                 type="button"
-                onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all cursor-pointer ${
+                onClick={() => handleDotClick(index)}
+                className={`h-2 rounded-full transition-all ${
                   index === currentIndex
                     ? "w-6 bg-primary"
                     : "w-2 bg-border hover:bg-muted-foreground"
