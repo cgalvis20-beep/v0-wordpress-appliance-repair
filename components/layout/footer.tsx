@@ -135,7 +135,7 @@ export function Footer() {
             {serviceAreas.map((area) => (
               <Link
                 key={area}
-                href={`/locations/${area.toLowerCase().replace(/\.\s/g, "").replace(/\s/g, "-")}`}
+                href={`/locations/${area.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}`}
                 className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
               >
                 {area}
