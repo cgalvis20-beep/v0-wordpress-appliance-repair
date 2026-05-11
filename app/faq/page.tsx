@@ -192,7 +192,7 @@ export default function FAQPage() {
               <Button asChild variant="outline">
                 <a href={`tel:${companyInfo.phoneClean}`}>
                   <Phone className="h-4 w-4 mr-2" />
-                  Call {companyInfo.phone}
+                  {companyInfo.phone}
                 </a>
               </Button>
               <Button asChild>
