@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { CheckCircle, Users, Calendar, Star, ArrowRight, Wrench } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -107,16 +108,14 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/20 via-muted to-accent/20 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground text-3xl font-bold mx-auto mb-4">
-                  M
-                </div>
-                <p className="text-xl font-semibold text-foreground">
-                  {companyInfo.name}
-                </p>
-                <p className="text-muted-foreground">Est. 2014</p>
-              </div>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/about/our-story.png"
+                alt="My Appliance Pro technician explaining repair to customer"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
