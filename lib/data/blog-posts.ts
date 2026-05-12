@@ -166,5 +166,6 @@ Is your unit acting up? Search for dishwasher repairs in your area or book your 
     publishedDate: "2024-04-10",
     author: "My Appliance Pro Team",
     category: "Repair Guides",
+    image: "/images/blog/common-dishwasher-problems.png",
   },
 ]
