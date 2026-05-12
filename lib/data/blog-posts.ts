@@ -135,6 +135,7 @@ If you need a pro to repair home appliances near me, contact us today or search 
     publishedDate: "2024-03-22",
     author: "My Appliance Pro Team",
     category: "Tips & Advice",
+    image: "/images/blog/choosing-right-technician.png",
   },
   {
     slug: "common-dishwasher-problems",
