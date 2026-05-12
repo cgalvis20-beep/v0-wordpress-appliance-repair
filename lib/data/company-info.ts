@@ -18,7 +18,7 @@ export const companyInfo = {
   social: {
     google: "https://g.page/myappliancepro",
   },
-  calendlyUrl: "https://calendly.com/myappliancepro/service-call",
+  calendlyUrl: "https://calendly.com/cgalvis20/30min",
   tagline: "Fast, Reliable Appliance Repair in London & Surrounding Areas",
   description:
     "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by thousands of homeowners.",
