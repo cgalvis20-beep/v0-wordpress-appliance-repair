@@ -54,7 +54,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
   const { slug } = await params
   const brand = brands.find((b) => b.slug === slug)
 
-  if (!brand) {
+  if (!brand || !brand.appliancesServiced || !brand.commonIssues || !brand.whyChooseUs || !brand.faqs) {
     notFound()
   }
 
@@ -167,9 +167,9 @@ export default async function BrandPage({ params }: BrandPageProps) {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {brand.appliancesServiced.map((appliance) => {
+            {brand.appliancesServiced?.map((appliance) => {
               const service = services.find(
-                (s) => s.name.toLowerCase().includes(appliance.toLowerCase())
+                (s) => s.name?.toLowerCase().includes(appliance?.toLowerCase() ?? "")
               )
               return (
                 <Card key={appliance} className="transition-shadow hover:shadow-md">
@@ -213,7 +213,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
 
           <div className="mx-auto max-w-3xl">
             <div className="grid gap-4 sm:grid-cols-2">
-              {brand.commonIssues.map((issue) => (
+              {brand.commonIssues?.map((issue) => (
                 <div
                   key={issue}
                   className="flex items-center gap-3 rounded-lg bg-card p-4"
@@ -236,7 +236,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
                 Why Choose {companyInfo.name} for {brand.name} Repairs?
               </h2>
               <div className="space-y-4">
-                {brand.whyChooseUs.map((reason, index) => (
+                {brand.whyChooseUs?.map((reason, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-accent" />
                     <p className="text-muted-foreground">{reason}</p>
