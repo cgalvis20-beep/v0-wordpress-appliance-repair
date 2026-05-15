@@ -85,11 +85,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <address className="not-italic text-foreground">
-                  {companyInfo.address.street}
-                  <br />
-                  {companyInfo.address.city}, {companyInfo.address.province}
-                  <br />
-                  {companyInfo.address.postalCode}
+                  London, Ontario. N6C 5H5
                 </address>
               </CardContent>
             </Card>
