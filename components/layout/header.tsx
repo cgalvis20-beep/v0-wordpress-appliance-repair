@@ -70,7 +70,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo-v2.jpg"
+              src="/images/Logo.jpg"
               alt={companyInfo.name}
               width={234}
               height={65}
