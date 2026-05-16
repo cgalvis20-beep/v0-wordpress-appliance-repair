@@ -36,8 +36,8 @@ export function ContactForm() {
       `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nAppliance Type: ${service || "Not specified"}\n\nMessage:\n${message}`
     )
 
-    // Open mailto link
-    window.location.href = `mailto:info@myappliancepro.ca?subject=${subject}&body=${body}`
+    // Open mailto link in new tab
+    window.open(`mailto:info@myappliancepro.ca?subject=${subject}&body=${body}`, '_blank')
 
     // Show success after a short delay
     setTimeout(() => {
