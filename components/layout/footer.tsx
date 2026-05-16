@@ -35,9 +35,9 @@ export function Footer() {
               <Image
                 src="/images/logo.jpg"
                 alt={companyInfo.name}
-                width={180}
-                height={50}
-                className="h-12 w-auto bg-white rounded p-1"
+                width={234}
+                height={65}
+                className="h-16 w-auto bg-white rounded p-1"
               />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">

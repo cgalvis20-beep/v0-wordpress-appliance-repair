@@ -72,9 +72,9 @@ export function Header() {
             <Image
               src="/images/logo.jpg"
               alt={companyInfo.name}
-              width={180}
-              height={50}
-              className="h-12 w-auto"
+              width={234}
+              height={65}
+              className="h-16 w-auto"
               priority
             />
           </Link>
