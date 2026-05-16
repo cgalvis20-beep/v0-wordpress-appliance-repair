@@ -55,10 +55,10 @@ export function ContactForm() {
           </div>
         </div>
         <h3 className="text-xl font-semibold text-foreground mb-2">
-          Message Sent!
+          Almost done!
         </h3>
         <p className="text-muted-foreground">
-          Do not forget to click on Send Message.
+          Please hit Send when it appears.
         </p>
       </div>
     )
