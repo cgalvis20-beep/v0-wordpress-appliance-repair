@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
@@ -13,31 +16,30 @@ export async function POST(request: Request) {
       )
     }
 
-    // Format the email content
-    const emailContent = `
-New Contact Form Submission
+    // Send email using Resend
+    const { error } = await resend.emails.send({
+      from: "My Appliance Pro <onboarding@resend.dev>",
+      to: "info@myappliancepro.ca",
+      replyTo: email,
+      subject: `New Contact Form Submission: ${firstName} ${lastName}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Appliance Type:</strong> ${service || "Not specified"}</p>
+        <h3>Message:</h3>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+      `,
+    })
 
-Name: ${firstName} ${lastName}
-Email: ${email}
-Phone: ${phone}
-Appliance Type: ${service || "Not specified"}
-
-Message:
-${message}
-    `.trim()
-
-    // For now, log the submission (in production, integrate with an email service)
-    console.log("Contact form submission to info@myappliancepro.ca:")
-    console.log(emailContent)
-
-    // TODO: Integrate with email service (e.g., Resend, SendGrid, or Nodemailer)
-    // Example with Resend:
-    // await resend.emails.send({
-    //   from: "noreply@myappliancepro.ca",
-    //   to: "info@myappliancepro.ca",
-    //   subject: `New Contact Form: ${firstName} ${lastName}`,
-    //   text: emailContent,
-    // })
+    if (error) {
+      console.error("Resend error:", error)
+      return NextResponse.json(
+        { error: "Failed to send email" },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json(
       { success: true, message: "Message sent successfully" },
