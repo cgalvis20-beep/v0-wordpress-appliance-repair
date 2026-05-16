@@ -58,7 +58,7 @@ export function ContactForm() {
           Almost done!
         </h3>
         <p className="text-muted-foreground">
-          Please hit Send when it appears.
+          Please hit Send when the pop-up email appears.
         </p>
       </div>
     )
