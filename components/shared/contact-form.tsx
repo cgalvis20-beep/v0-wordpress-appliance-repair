@@ -19,38 +19,31 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     const formData = new FormData(e.currentTarget)
-    const data = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      service: formData.get("service"),
-      message: formData.get("message"),
-    }
+    const firstName = formData.get("firstName") as string
+    const lastName = formData.get("lastName") as string
+    const email = formData.get("email") as string
+    const phone = formData.get("phone") as string
+    const service = formData.get("service") as string
+    const message = formData.get("message") as string
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
+    const subject = encodeURIComponent(`Service Request from ${firstName} ${lastName}`)
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nAppliance Type: ${service || "Not specified"}\n\nMessage:\n${message}`
+    )
 
-      if (response.ok) {
-        setIsSubmitted(true)
-      } else {
-        alert("Failed to send message. Please try again or call us directly.")
-      }
-    } catch (error) {
-      console.error("Form submission error:", error)
-      alert("Failed to send message. Please try again or call us directly.")
-    } finally {
+    // Open mailto link
+    window.location.href = `mailto:info@myappliancepro.ca?subject=${subject}&body=${body}`
+
+    // Show success after a short delay
+    setTimeout(() => {
       setIsSubmitting(false)
-    }
+      setIsSubmitted(true)
+    }, 500)
   }
 
   if (isSubmitted) {
