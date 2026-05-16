@@ -58,7 +58,7 @@ export function ContactForm() {
           Message Sent!
         </h3>
         <p className="text-muted-foreground">
-          Thank you for contacting us. We&apos;ll get back to you within 24 hours.
+          Do not forget to click on Send Message.
         </p>
       </div>
     )
