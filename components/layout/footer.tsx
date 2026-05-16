@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { companyInfo, serviceAreas } from "@/lib/data/company-info"
 
@@ -30,12 +31,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground font-bold text-lg">
-                M
-              </div>
-              <span className="font-bold text-xl">{companyInfo.name}</span>
-            </div>
+            <Link href="/">
+              <Image
+                src="/images/logo.jpg"
+                alt={companyInfo.name}
+                width={180}
+                height={50}
+                className="h-12 w-auto bg-white rounded p-1"
+              />
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               {companyInfo.description}
             </p>
