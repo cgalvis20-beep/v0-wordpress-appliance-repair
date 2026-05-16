@@ -33,7 +33,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo-v2.jpg"
                 alt={companyInfo.name}
                 width={234}
                 height={65}
