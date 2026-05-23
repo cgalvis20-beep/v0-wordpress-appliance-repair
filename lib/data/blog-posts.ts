@@ -163,7 +163,7 @@ Professional dishwasher repairs are the only way to guarantee your kitchen remai
 ## Get Your Dishwasher Fixed Today
 
 Is your unit acting up? Search for dishwasher repairs in your area or book your specialized repairing Bosch dishwasher service online today.`,
-    publishedDate: "2024-04-10",
+    publishedDate: "2025-04-10",
     author: "My Appliance Pro Team",
     category: "Repair Guides",
     image: "/images/blog/common-dishwasher-problems.png",
