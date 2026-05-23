@@ -101,7 +101,7 @@ If you are struggling with a malfunctioning LG dishwasher, a professional techni
 ## Get Professional Help Today
 
 Searching for someone to repair home appliances near me? Our team handles everything from major leaks to complex electronics. Click here to book your repair home appliances near me and secure your professional dishwasher repairs.`,
-    publishedDate: "2024-03-05",
+    publishedDate: "2026-03-05",
     author: "My Appliance Pro Team",
     category: "Tips & Advice",
     image: "/images/blog/diy-vs-professional-repair.png",
