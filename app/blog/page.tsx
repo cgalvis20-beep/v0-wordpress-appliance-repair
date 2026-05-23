@@ -139,8 +139,8 @@ export default function BlogPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <h2 className="mb-8 text-2xl font-bold text-foreground">Browse by Category</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {["Maintenance", "Troubleshooting", "Tips", "Buying Guides"].map((category) => {
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {["Maintenance Tips", "Tips & Advice", "Repair Guides"].map((category) => {
               const count = blogPosts.filter((p) => p.category === category).length
               return (
                 <Card
