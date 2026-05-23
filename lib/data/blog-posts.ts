@@ -39,7 +39,7 @@ In South Western Ontario, keeping your kitchen running smoothly is vital. Don't 
 ## Get Expert Help Today
 
 Contact My Appliance Pro today or search for appliance repair near me to book your same-day diagnostic. We provide expert appliance repair near me for all major makes and models.`,
-    publishedDate: "2024-01-15",
+    publishedDate: "2026-01-15",
     author: "My Appliance Pro Team",
     category: "Maintenance Tips",
     image: "/images/blog/refrigerator-repair.png",
