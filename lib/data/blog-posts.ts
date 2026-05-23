@@ -132,7 +132,7 @@ We take pride in being the most trusted name for those who need to repair home a
 ## Don't Settle for Less
 
 If you need a pro to repair home appliances near me, contact us today or search for the top-rated appliances near me repair in your city.`,
-    publishedDate: "2024-03-22",
+    publishedDate: "2026-03-22",
     author: "My Appliance Pro Team",
     category: "Tips & Advice",
     image: "/images/blog/choosing-right-technician.png",
