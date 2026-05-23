@@ -49,7 +49,7 @@ export default function TermsPage() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span><strong>Diagnostic Fee:</strong> A flat-rate Diagnostic Fee is charged for every service visit. This fee covers the technician&apos;s travel, time, and professional assessment of the appliance.</span>
+                  <span><strong>Diagnostic Fee:</strong> We charge a flat $99 CAD diagnostic fee for every service visit. This ensures our technician can travel to your home, dedicate the necessary time, and comprehensively assess your appliance.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
