@@ -24,10 +24,10 @@ export default function ContactPage() {
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Contact Us
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-lg text-muted-foreground font-normal">
             Have a question or ready to schedule your repair? We&apos;re here to
             help. Reach out to us using any of the methods below.
-          </p>
+          </h2>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
