@@ -44,7 +44,7 @@ const pricingFAQs = [
   {
     question: "Do you charge for estimates?",
     answer:
-      "We charge a $89 diagnostic fee for the technician to come to your home and diagnose the problem. This fee is waived if you proceed with the repair. Phone estimates are free, but an in-person diagnosis is needed for an accurate repair quote.",
+      "We charge a $99 diagnostic fee for a technician to come to your home and accurately diagnose the problem. If you proceed with the repair, we will waive 35% of this fee. While we are happy to provide free phone estimates, an in-person diagnosis is required to give you a precise repair quote.",
   },
   {
     question: "What payment methods do you accept?",
