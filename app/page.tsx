@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { HeroSection } from "@/components/home/hero-section"
 import { TrustBadges } from "@/components/home/trust-badges"
 import { ServicesGrid } from "@/components/home/services-grid"
@@ -8,6 +9,10 @@ import { BrandsSection } from "@/components/home/brands-section"
 import { WhyChooseUs } from "@/components/home/why-choose-us"
 import { CTABanner } from "@/components/home/cta-banner"
 import { companyInfo } from "@/lib/data/company-info"
+
+export const metadata: Metadata = {
+  description: "Need fast appliance repair in London, ON? My Appliance Pro offers expert, same-day service for all major brands. Licensed, insured & trusted locally. Book today!",
+}
 
 export default function HomePage() {
   return (
