@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Header } from '@/components/layout/header'
@@ -46,6 +47,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-NPL43N1W5Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NPL43N1W5Y');
+          `}
+        </Script>
+      </head>
       <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen pb-20 lg:pb-0">{children}</main>
