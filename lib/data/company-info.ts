@@ -11,7 +11,7 @@ export const companyInfo = {
     country: "Canada",
   },
   hours: {
-    weekdays: "8:30 AM - 4:30 PM",
+    weekdays: "8:30 AM - 6:00 PM",
     saturday: "9:00 AM - 2:00 PM",
     sunday: "10:00 AM - 1:00 PM",
   },
