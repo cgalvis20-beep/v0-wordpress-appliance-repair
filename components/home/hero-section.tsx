@@ -34,7 +34,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            {companyInfo.tagline}. Licensed technicians, upfront pricing, and a 90-day warranty on all repairs.
+            Get the fix you need with the protection you deserve. All work is backed by our 90-day parts and labor warranty, with new 6-month to 1-year extended warranty options available for premium repairs. Book your reliable, same-day appliance repair today!
           </p>
 
           {/* Highlights */}
