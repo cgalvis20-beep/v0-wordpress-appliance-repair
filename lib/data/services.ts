@@ -126,7 +126,7 @@ export const services: Service[] = [
       "Door won't close",
     ],
     benefits: [
-      "Gas and electric dryers",
+      "Electric dryers",
       "Same-day service",
       "90-day warranty",
       "Upfront pricing",
