@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { icon: Users, value: "100+", label: "Happy Customers" },
+  { icon: Users, value: "40+", label: "Happy Customers" },
   { icon: Calendar, value: "Same Day", label: "Service" },
   { icon: Star, value: "Five Stars", label: "Rated" },
   { icon: Wrench, value: "90-Day", label: "Warranty" },
@@ -91,8 +91,8 @@ export default function AboutPage() {
                 {companyInfo.name} was founded with a simple mission: to provide
                 London and surrounding areas with honest, reliable appliance
                 repair service. What started as a one-person operation has grown
-                into a team of skilled technicians serving thousands of
-                customers each year.
+                into a team of skilled technicians serving homeowners across
+                Southwestern Ontario.
               </p>
               <p>
                 We understand how frustrating it is when an appliance breaks

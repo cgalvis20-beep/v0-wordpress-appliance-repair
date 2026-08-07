@@ -65,7 +65,7 @@ export function HeroSection() {
 
           {/* Trust text */}
           <p className="mt-6 text-sm text-muted-foreground">
-            Trusted by thousands of homeowners across Southwestern Ontario
+            Trusted by 40+ homeowners across Southwestern Ontario
           </p>
         </div>
       </div>

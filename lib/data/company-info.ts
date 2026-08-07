@@ -22,7 +22,7 @@ export const companyInfo = {
   calendlyUrl: "https://calendly.com/cgalvis20/30min",
   tagline: "Fast, Reliable Appliance Repair in London & Surrounding Areas",
   description:
-    "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by thousands of homeowners.",
+    "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by 40+ homeowners.",
 }
 
 export const serviceAreas = [
@@ -55,6 +55,6 @@ export const trustBadges = [
   {
     icon: "Star",
     title: "5-Star Rated",
-    description: "Trusted by thousands",
+    description: "Trusted by 40+ customers",
   },
 ]
