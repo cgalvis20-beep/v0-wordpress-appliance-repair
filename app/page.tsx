@@ -55,13 +55,13 @@ export default function HomePage() {
                 "@type": "OpeningHoursSpecification",
                 dayOfWeek: "Saturday",
                 opens: "09:00",
-                closes: "18:00",
+                closes: "14:00",
               },
               {
                 "@type": "OpeningHoursSpecification",
                 dayOfWeek: "Sunday",
                 opens: "10:00",
-                closes: "16:00",
+                closes: "13:00",
               },
             ],
             priceRange: "$$",
@@ -82,11 +82,20 @@ export default function HomePage() {
               "Dishwasher Repair",
               "Oven Repair",
               "Stove Repair",
+              "Range Repair",
+              "Freezer Repair",
+              "Microwave Repair",
+              "Cooktop Repair",
+              "Range Hood Repair",
             ],
+            // Sourced from the business's Google Business Profile.
+            // Last verified: 2026-08-06. Update this figure whenever it's
+            // rechecked — do not let it drift silently out of sync with
+            // the live listing (see SEO audit finding #1, 2026-08-06).
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "847",
+              ratingValue: "5.0",
+              reviewCount: "9",
             },
           }),
         }}
