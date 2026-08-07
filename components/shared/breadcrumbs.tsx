@@ -1,5 +1,8 @@
 import Link from "next/link"
 import { ChevronRight, Home } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+const SITE_URL = "https://myappliancepro.ca"
 
 interface BreadcrumbItem {
   label: string
@@ -8,11 +11,36 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[]
+  className?: string
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
+  // Build the full ordered list: synthetic Home entry first, then the passed items.
+  const allItems: BreadcrumbItem[] = [{ label: "Home", href: "/" }, ...items]
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: allItems.map((item, index) => {
+      const isLast = index === allItems.length - 1
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        // Google guidance: omit the `item` URL on the final (current-page) entry.
+        ...(!isLast && item.href
+          ? { item: `${SITE_URL}${item.href}` }
+          : {}),
+      }
+    }),
+  }
+
   return (
-    <nav aria-label="Breadcrumb" className="mb-6">
+    <nav aria-label="Breadcrumb" className={cn("mb-6", className)}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <ol className="flex items-center flex-wrap gap-1 text-sm">
         <li>
           <Link
