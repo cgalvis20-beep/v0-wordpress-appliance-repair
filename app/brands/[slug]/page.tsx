@@ -378,7 +378,6 @@ export default async function BrandPage({ params }: BrandPageProps) {
               telephone: companyInfo.phone,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: companyInfo.address.street,
                 addressLocality: companyInfo.address.city,
                 addressRegion: companyInfo.address.province,
                 postalCode: companyInfo.address.postalCode,

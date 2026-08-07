@@ -3,11 +3,12 @@ export const companyInfo = {
   phone: "(519) 617-8350",
   phoneClean: "5196178350",
   email: "info@myappliancepro.ca",
+  // Service-area business — no public storefront/street address.
+  // See SEO audit finding #2, confirmed 2026-08-06.
   address: {
-    street: "123 Dundas Street",
     city: "London",
     province: "Ontario",
-    postalCode: "N6A 1G7",
+    postalCode: "N6C 5H5",
     country: "Canada",
   },
   hours: {

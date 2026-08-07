@@ -32,7 +32,6 @@ export default function HomePage() {
             email: companyInfo.email,
             address: {
               "@type": "PostalAddress",
-              streetAddress: companyInfo.address.street,
               addressLocality: companyInfo.address.city,
               addressRegion: companyInfo.address.province,
               postalCode: companyInfo.address.postalCode,
