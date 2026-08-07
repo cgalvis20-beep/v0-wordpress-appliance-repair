@@ -9,6 +9,7 @@ export interface BlogPost {
   author: string
   category: string
   image?: string
+  imageAlt?: string
 }
 
 export const blogPosts: BlogPost[] = [
@@ -43,6 +44,8 @@ If you're seeing any of these red flags, contact My Appliance Pro to book a same
     author: "My Appliance Pro Team",
     category: "Maintenance Tips",
     image: "/images/blog/refrigerator-repair.png",
+    imageAlt:
+      "Refrigerator thermometer reading 10.5°C next to spoiled fruit and vegetables inside a fridge that isn't cooling properly",
   },
   {
     slug: "extend-washer-dryer-life",
@@ -73,7 +76,6 @@ We service washers and dryers from all major brands across London and the surrou
     publishedDate: "2025-02-08",
     author: "My Appliance Pro Team",
     category: "Maintenance Tips",
-    image: "/images/blog/washer-dryer-maintenance.png",
   },
   {
     slug: "diy-vs-professional-repair",
@@ -102,7 +104,6 @@ Not sure whether your repair is a DIY job or not? Contact our team. We handle ev
     publishedDate: "2026-03-05",
     author: "My Appliance Pro Team",
     category: "Tips & Advice",
-    image: "/images/blog/diy-vs-professional-repair.png",
   },
   {
     slug: "choosing-right-technician",
@@ -131,7 +132,6 @@ If you're weighing your options, contact My Appliance Pro. We're upfront about p
     publishedDate: "2026-03-22",
     author: "My Appliance Pro Team",
     category: "Tips & Advice",
-    image: "/images/blog/choosing-right-technician.png",
   },
   {
     slug: "common-dishwasher-problems",
@@ -160,6 +160,5 @@ Is your unit acting up? Contact My Appliance Pro to book a same-day dishwasher d
     publishedDate: "2025-04-10",
     author: "My Appliance Pro Team",
     category: "Repair Guides",
-    image: "/images/blog/common-dishwasher-problems.png",
   },
 ]

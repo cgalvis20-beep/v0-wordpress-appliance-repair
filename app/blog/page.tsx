@@ -51,7 +51,7 @@ export default function BlogPage() {
                   {featuredPost.image ? (
                     <Image
                       src={featuredPost.image}
-                      alt={featuredPost.title}
+                      alt={featuredPost.imageAlt || featuredPost.title}
                       fill
                       className="object-cover"
                       priority
@@ -102,7 +102,7 @@ export default function BlogPage() {
                     {post.image ? (
                       <Image
                         src={post.image}
-                        alt={post.title}
+                        alt={post.imageAlt || post.title}
                         fill
                         className="object-cover"
                       />

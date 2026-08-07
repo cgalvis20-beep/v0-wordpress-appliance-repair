@@ -71,7 +71,7 @@ export function Header() {
           <Link href="/" className="flex items-center">
             <Image
               src="/images/myappliancepro-logo.jpg"
-              alt={companyInfo.name}
+              alt={`${companyInfo.name} logo`}
               width={234}
               height={65}
               className="h-16 w-auto"

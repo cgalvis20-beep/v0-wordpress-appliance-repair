@@ -181,7 +181,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="mb-8 overflow-hidden rounded-xl">
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt || post.title}
                   width={800}
                   height={500}
                   className="w-full h-auto object-cover"
