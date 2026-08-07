@@ -29,7 +29,7 @@ export default function HomePage() {
             "@type": "LocalBusiness",
             "@id": "https://myappliancepro.ca",
             name: companyInfo.name,
-            image: "https://myappliancepro.ca/logo.png",
+            image: "https://myappliancepro.ca/images/myappliancepro-logo.jpg",
             description: companyInfo.description,
             telephone: companyInfo.phone,
             email: companyInfo.email,
