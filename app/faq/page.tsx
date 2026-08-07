@@ -9,7 +9,10 @@ import { companyInfo } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Find answers to common questions about our appliance repair services, pricing, warranty, and more. MyappliancePro - London's trusted repair service.",
+    "Find answers to common questions about our appliance repair services, pricing, warranty, and more. My Appliance Pro - London's trusted repair service.",
+  alternates: {
+    canonical: '/faq',
+  },
 }
 
 const generalFAQs = [

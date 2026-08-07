@@ -10,7 +10,10 @@ import { companyInfo } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "MyappliancePro provides appliance repair services in London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg, Aylmer, and Dorchester.",
+    "My Appliance Pro provides appliance repair services in London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg, Aylmer, and Dorchester.",
+  alternates: {
+    canonical: '/locations',
+  },
 }
 
 export default function LocationsPage() {

@@ -6,6 +6,9 @@ import { Phone } from "lucide-react"
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: `Terms of Service for ${companyInfo.name}. Read our terms governing appliance repair services in London, St. Thomas, Woodstock, and surrounding areas.`,
+  alternates: {
+    canonical: '/terms',
+  },
 }
 
 export default function TermsPage() {

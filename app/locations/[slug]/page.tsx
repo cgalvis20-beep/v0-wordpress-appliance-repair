@@ -36,6 +36,9 @@ export async function generateMetadata({
   return {
     title: city.metaTitle,
     description: city.metaDescription,
+    alternates: {
+      canonical: `/locations/${city.slug}`,
+    },
   }
 }
 

@@ -12,6 +12,9 @@ import { companyInfo } from "@/lib/data/company-info"
 
 export const metadata: Metadata = {
   description: "Need fast appliance repair in London, ON? My Appliance Pro offers expert, same-day service for all major brands. Licensed, insured & trusted locally. Book today!",
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export default function HomePage() {

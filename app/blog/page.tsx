@@ -11,6 +11,9 @@ import { Calendar, ArrowRight, User } from "lucide-react"
 export const metadata: Metadata = {
   title: "Appliance Repair Tips & Guides",
   description: `Expert appliance repair tips, maintenance guides, and troubleshooting advice from ${companyInfo.name}. Learn how to extend the life of your appliances.`,
+  alternates: {
+    canonical: '/blog',
+  },
 }
 
 export default function BlogPage() {

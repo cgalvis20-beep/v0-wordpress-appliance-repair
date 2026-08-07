@@ -43,6 +43,9 @@ export async function generateMetadata({ params }: BrandPageProps): Promise<Meta
   return {
     title: `${brand.name} Appliance Repair | ${companyInfo.name}`,
     description: brand.metaDescription,
+    alternates: {
+      canonical: `/brands/${brand.slug}`,
+    },
     openGraph: {
       title: `${brand.name} Appliance Repair | ${companyInfo.name}`,
       description: brand.metaDescription,

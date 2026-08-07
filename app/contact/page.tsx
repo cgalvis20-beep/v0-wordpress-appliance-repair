@@ -10,7 +10,10 @@ import { companyInfo } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact MyappliancePro for appliance repair in London and surrounding areas. Call, email, or fill out our contact form. Same-day service available.",
+    "Contact My Appliance Pro for appliance repair in London and surrounding areas. Call, email, or fill out our contact form. Same-day service available.",
+  alternates: {
+    canonical: '/contact',
+  },
 }
 
 export default function ContactPage() {

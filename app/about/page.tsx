@@ -10,7 +10,10 @@ import { companyInfo, serviceAreas } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about MyappliancePro, London's trusted appliance repair service. Licensed technicians, same-day service, and a commitment to customer satisfaction.",
+    "Learn about My Appliance Pro, London's trusted appliance repair service. Licensed technicians, same-day service, and a commitment to customer satisfaction.",
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 const stats = [

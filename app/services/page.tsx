@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Appliance Repair Services",
   description:
     "Professional appliance repair services in London and surrounding areas. We repair refrigerators, washers, dryers, dishwashers, ovens, and more. Same-day service available.",
+  alternates: {
+    canonical: '/services',
+  },
 }
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
