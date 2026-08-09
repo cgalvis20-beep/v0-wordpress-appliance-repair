@@ -47,7 +47,7 @@ export default function TermsPage() {
             {/* Section 2 */}
             <div className="mb-10">
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                2. Diagnostic Services and Fee Waiver
+                2. Diagnostic Services
               </h2>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-3">
