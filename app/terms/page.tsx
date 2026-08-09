@@ -56,10 +56,6 @@ export default function TermsPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span><strong>20% Fee Waiver:</strong> If you choose to proceed with the repair recommended during the initial diagnostic visit, 20% of the Diagnostic Fee will be credited toward the total labor cost of that specific repair. The remaining 80% of the Diagnostic Fee remains as a charge for the professional assessment service rendered.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold">•</span>
                   <span><strong>Non-Refundability:</strong> The Diagnostic Fee is non-refundable once the technician has arrived at the service address, regardless of whether the appliance is deemed repairable.</span>
                 </li>
               </ul>
