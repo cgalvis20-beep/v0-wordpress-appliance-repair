@@ -42,12 +42,12 @@ const pricingFAQs = [
   {
     question: "How much does appliance repair cost?",
     answer:
-      "Repair costs vary depending on the appliance type and the specific issue. We charge a diagnostic fee of $124 CAD, of which 20% is waived if you proceed with the repair. After diagnosis, we provide an upfront quote so you know exactly what to expect before any work begins.",
+      "Repair costs vary depending on the appliance type and the specific issue. We charge a diagnostic fee of $124 CAD. After diagnosis, we provide an upfront quote so you know exactly what to expect before any work begins.",
   },
   {
     question: "Do you charge for estimates?",
     answer:
-      "We charge a $124 CAD diagnostic fee for a technician to come to your home and accurately diagnose the problem. If you proceed with the repair, we will waive 20% of this fee. While we are happy to provide free phone estimates, an in-person diagnosis is required to give you a precise repair quote.",
+      "We charge a $124 CAD diagnostic fee for a technician to come to your home and accurately diagnose the problem. While we are happy to provide free phone estimates, an in-person diagnosis is required to give you a precise repair quote.",
   },
   {
     question: "What payment methods do you accept?",
