@@ -52,11 +52,11 @@ export default function TermsPage() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span><strong>Diagnostic Fee:</strong> We charge a flat $99 CAD diagnostic fee for every service visit. This ensures our technician can travel to your home, dedicate the necessary time, and comprehensively assess your appliance.</span>
+                  <span><strong>Diagnostic Fee:</strong> We charge a flat $124 CAD diagnostic fee for every service visit. This ensures our technician can travel to your home, dedicate the necessary time, and comprehensively assess your appliance.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span><strong>35% Fee Waiver:</strong> If you choose to proceed with the repair recommended during the initial diagnostic visit, 35% of the Diagnostic Fee will be credited toward the total labor cost of that specific repair. The remaining 65% of the Diagnostic Fee remains as a charge for the professional assessment service rendered.</span>
+                  <span><strong>20% Fee Waiver:</strong> If you choose to proceed with the repair recommended during the initial diagnostic visit, 20% of the Diagnostic Fee will be credited toward the total labor cost of that specific repair. The remaining 80% of the Diagnostic Fee remains as a charge for the professional assessment service rendered.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>

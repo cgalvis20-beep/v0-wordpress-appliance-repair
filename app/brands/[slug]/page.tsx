@@ -266,7 +266,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
               <div className="space-y-3">
                 <div className="flex justify-between border-b border-border pb-2">
                   <span className="text-muted-foreground">Service Call / Diagnosis</span>
-                  <span className="font-semibold text-foreground">$89</span>
+                  <span className="font-semibold text-foreground">$124</span>
                 </div>
                 <div className="flex justify-between border-b border-border pb-2">
                   <span className="text-muted-foreground">Labor (most repairs)</span>
@@ -278,7 +278,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
                 </div>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
-                * Service call fee is waived if you proceed with the repair
+                * 20% of the service call fee is waived if you proceed with the repair
               </p>
             </div>
           </div>
