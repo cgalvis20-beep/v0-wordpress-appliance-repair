@@ -7,6 +7,12 @@ import { blogPosts } from "@/lib/data/blog-posts"
 const baseUrl = "https://myappliancepro.ca"
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Freshest blog post date drives the /blog hub's lastModified signal.
+  const latestBlogDate = blogPosts.reduce((latest, post) => {
+    const postDate = new Date(post.publishedDate)
+    return postDate > latest ? postDate : latest
+  }, new Date(0))
+
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -58,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: latestBlogDate,
       changeFrequency: "weekly",
       priority: 0.7,
     },
@@ -99,7 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(post.publishedDate),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }))
