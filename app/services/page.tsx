@@ -23,7 +23,7 @@ import { companyInfo } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "Appliance Repair Services",
   description:
-    "Professional appliance repair services in London and surrounding areas. We repair refrigerators, washers, dryers, dishwashers, ovens, and more. Same-day service available.",
+    "Professional appliance repair in London and surrounding areas. We repair refrigerators, washers, dryers, dishwashers, ovens, and more. Same-day service.",
   alternates: {
     canonical: '/services',
   },

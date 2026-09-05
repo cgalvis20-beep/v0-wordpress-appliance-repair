@@ -1,17 +1,18 @@
 export interface City {
   slug: string
+  lastUpdated: string
   name: string
   metaTitle: string
   metaDescription: string
   description: string
   neighborhoods: string[]
   highlights: string[]
-  lastUpdated?: string
 }
 
 export const cities: City[] = [
   {
     slug: "london",
+    lastUpdated: "2026-05-11",
     name: "London",
     metaTitle: "Appliance Repair London ON | Same-Day Service | My Appliance Pro",
     metaDescription:
@@ -41,6 +42,7 @@ export const cities: City[] = [
   },
   {
     slug: "st-thomas",
+    lastUpdated: "2026-05-11",
     name: "St. Thomas",
     metaTitle: "Appliance Repair St. Thomas ON | Fast Service | My Appliance Pro",
     metaDescription:
@@ -64,6 +66,7 @@ export const cities: City[] = [
   },
   {
     slug: "woodstock",
+    lastUpdated: "2026-05-11",
     name: "Woodstock",
     metaTitle: "Appliance Repair Woodstock ON | Expert Service | My Appliance Pro",
     metaDescription:
@@ -87,6 +90,7 @@ export const cities: City[] = [
   },
   {
     slug: "strathroy",
+    lastUpdated: "2026-05-11",
     name: "Strathroy",
     metaTitle: "Appliance Repair Strathroy ON | Same-Day | My Appliance Pro",
     metaDescription:
@@ -109,6 +113,7 @@ export const cities: City[] = [
   },
   {
     slug: "ingersoll",
+    lastUpdated: "2026-05-11",
     name: "Ingersoll",
     metaTitle: "Appliance Repair Ingersoll ON | All Brands | My Appliance Pro",
     metaDescription:
@@ -131,6 +136,7 @@ export const cities: City[] = [
   },
   {
     slug: "tillsonburg",
+    lastUpdated: "2026-05-11",
     name: "Tillsonburg",
     metaTitle: "Appliance Repair Tillsonburg ON | Fast Service | My Appliance Pro",
     metaDescription:
@@ -153,6 +159,7 @@ export const cities: City[] = [
   },
   {
     slug: "aylmer",
+    lastUpdated: "2026-05-11",
     name: "Aylmer",
     metaTitle: "Appliance Repair Aylmer ON | Expert Service | My Appliance Pro",
     metaDescription:
@@ -175,6 +182,7 @@ export const cities: City[] = [
   },
   {
     slug: "dorchester",
+    lastUpdated: "2026-05-11",
     name: "Dorchester",
     metaTitle: "Appliance Repair Dorchester ON | Local Service | My Appliance Pro",
     metaDescription:

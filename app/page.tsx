@@ -11,7 +11,7 @@ import { CTABanner } from "@/components/home/cta-banner"
 import { companyInfo } from "@/lib/data/company-info"
 
 export const metadata: Metadata = {
-  description: "Need fast appliance repair in London, ON? My Appliance Pro offers expert, same-day service for all major brands. Licensed, insured & trusted locally. Book today!",
+  description: "Need fast appliance repair in London, ON? My Appliance Pro offers expert, same-day service for all major brands. Licensed & insured. Book today!",
   alternates: {
     canonical: '/',
   },
