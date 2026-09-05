@@ -5,98 +5,81 @@ import {
   Phone,
   Calendar,
   CheckCircle,
+  MapPin,
   ArrowRight,
-  Refrigerator,
-  WashingMachine,
-  Wind,
-  Sparkles,
-  Flame,
-  CookingPot,
-  ChefHat,
-  Snowflake,
-  Zap,
-  Gauge,
-  Fan,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { FAQAccordion } from "@/components/shared/faq-accordion"
-import { services, getServiceBySlug, getAllServiceSlugs } from "@/lib/data/services"
+import {
+  serviceCityPages,
+  getServiceCityPage,
+  getServiceSlugsForCity,
+} from "@/lib/data/service-city-pages"
+import { getServiceBySlug } from "@/lib/data/services"
 import { getCityBySlug } from "@/lib/data/cities"
-import { getCitySlugsForService } from "@/lib/data/service-city-pages"
 import { companyInfo } from "@/lib/data/company-info"
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Refrigerator,
-  WashingMachine,
-  Fan,
-  Sparkles,
-  Flame,
-  CookingPot,
-  ChefHat,
-  Snowflake,
-  Zap,
-  Gauge,
-  Wind,
-}
-
-interface ServicePageProps {
-  params: Promise<{ slug: string }>
+interface ServiceCityPageProps {
+  params: Promise<{ slug: string; city: string }>
 }
 
 export async function generateStaticParams() {
-  return getAllServiceSlugs().map((slug) => ({ slug }))
+  return serviceCityPages.map((page) => ({
+    slug: page.serviceSlug,
+    city: page.citySlug,
+  }))
 }
 
 export async function generateMetadata({
   params,
-}: ServicePageProps): Promise<Metadata> {
-  const { slug } = await params
-  const service = getServiceBySlug(slug)
+}: ServiceCityPageProps): Promise<Metadata> {
+  const { slug, city } = await params
+  const page = getServiceCityPage(slug, city)
 
-  if (!service) {
-    return { title: "Service Not Found" }
+  if (!page) {
+    return { title: "Page Not Found" }
   }
 
   return {
-    title: service.metaTitle,
-    description: service.metaDescription,
+    title: page.metaTitle,
+    description: page.metaDescription,
     alternates: {
-      canonical: `/services/${service.slug}`,
+      canonical: `/services/${page.serviceSlug}/${page.citySlug}`,
     },
   }
 }
 
-export default async function ServicePage({ params }: ServicePageProps) {
-  const { slug } = await params
+export default async function ServiceCityPage({
+  params,
+}: ServiceCityPageProps) {
+  const { slug, city } = await params
+  const page = getServiceCityPage(slug, city)
   const service = getServiceBySlug(slug)
+  const cityData = getCityBySlug(city)
 
-  if (!service) {
+  if (!page || !service || !cityData) {
     notFound()
   }
 
-  const Icon = iconMap[service.icon] || Refrigerator
-  const relatedServices = services
-    .filter((s) => s.slug !== service.slug)
-    .slice(0, 3)
-
-  // City-specific landing pages that exist for this service, for internal links.
-  const cityPages = getCitySlugsForService(service.slug)
-    .map((citySlug) => getCityBySlug(citySlug))
-    .filter((c): c is NonNullable<typeof c> => Boolean(c))
+  // Other service pages available in this same city, for internal linking.
+  const otherServicesInCity = getServiceSlugsForCity(city)
+    .filter((s) => s !== slug)
+    .map((s) => getServiceBySlug(s))
+    .filter((s): s is NonNullable<typeof s> => Boolean(s))
 
   return (
     <>
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Service Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: service.title,
-            description: service.longDescription,
+            name: `${service.title} in ${cityData.name}`,
+            description: page.metaDescription,
             provider: {
               "@type": "LocalBusiness",
               name: companyInfo.name,
@@ -104,7 +87,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             },
             areaServed: {
               "@type": "City",
-              name: "London, Ontario",
+              name: `${cityData.name}, Ontario`,
             },
             serviceType: service.title,
           }),
@@ -118,7 +101,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: service.faqs.map((faq) => ({
+            mainEntity: page.faqs.map((faq) => ({
               "@type": "Question",
               name: faq.question,
               acceptedAnswer: {
@@ -135,7 +118,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <Breadcrumbs
             items={[
               { label: "Services", href: "/services" },
-              { label: service.title },
+              { label: service.title, href: `/services/${service.slug}` },
+              { label: cityData.name },
             ]}
           />
 
@@ -143,32 +127,39 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {/* Main content */}
             <div className="lg:col-span-2">
               {/* Header */}
-              <div className="flex items-start gap-4 mb-8">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Icon className="h-8 w-8" />
+              <div className="mb-8">
+                <div className="flex items-center gap-2 text-primary mb-2">
+                  <MapPin className="h-5 w-5" />
+                  <span className="text-sm font-medium">
+                    Serving {cityData.name}, Ontario
+                  </span>
                 </div>
-                <div>
-                  <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
-                    {service.title}
-                  </h1>
-                  <p className="text-muted-foreground mt-1">
-                    Professional repair service in London &amp; area
-                  </p>
-                </div>
-              </div>
-
-              {/* Description */}
-              <div className="prose prose-slate max-w-none mb-8">
+                <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
+                  {service.title} in {cityData.name}
+                </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  {service.longDescription}
+                  {page.intro}
                 </p>
               </div>
 
-              {/* Common problems */}
+              {/* Local note */}
+              <Card className="mb-8 border-l-4 border-l-accent">
+                <CardContent className="pt-6">
+                  <h2 className="text-lg font-semibold text-foreground mb-2">
+                    Local {cityData.name} Service
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {page.localNote}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Common problems (reused service data) */}
               <Card className="mb-8">
                 <CardContent className="pt-6">
                   <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Common Problems We Fix
+                    Common {service.title.replace(" Repair", "")} Problems We
+                    Fix in {cityData.name}
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {service.commonProblems.map((problem) => (
@@ -181,55 +172,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </CardContent>
               </Card>
 
-              {/* Benefits */}
-              <Card className="mb-8">
-                <CardContent className="pt-6">
-                  <h2 className="text-xl font-semibold text-foreground mb-4">
-                    Why Choose Us for {service.title}
-                  </h2>
-                  <div className="space-y-3">
-                    {service.benefits.map((benefit) => (
-                      <div key={benefit} className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-primary shrink-0" />
-                        <span className="text-foreground">{benefit}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* FAQs */}
+              {/* FAQs (unique per page) */}
               <div className="mb-8">
                 <h2 className="text-xl font-semibold text-foreground mb-4">
-                  Frequently Asked Questions
+                  {cityData.name} {service.title} FAQs
                 </h2>
-                <FAQAccordion faqs={service.faqs} />
+                <FAQAccordion faqs={page.faqs} />
               </div>
-
-              {/* City-specific landing pages */}
-              {cityPages.length > 0 && (
-                <Card className="mb-8">
-                  <CardContent className="pt-6">
-                    <h2 className="text-xl font-semibold text-foreground mb-4">
-                      {service.title} by Area
-                    </h2>
-                    <div className="grid sm:grid-cols-2 gap-3">
-                      {cityPages.map((cityPage) => (
-                        <Link
-                          key={cityPage.slug}
-                          href={`/services/${service.slug}/${cityPage.slug}`}
-                          className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-muted/50 transition-colors"
-                        >
-                          <span className="font-medium text-foreground">
-                            {service.title} in {cityPage.name}
-                          </span>
-                          <ArrowRight className="h-4 w-4 text-primary shrink-0" />
-                        </Link>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
             </div>
 
             {/* Sidebar */}
@@ -239,7 +188,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <Card className="bg-primary text-primary-foreground">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-semibold mb-2">
-                      Need {service.title}?
+                      Need {service.title} in {cityData.name}?
                     </h3>
                     <p className="text-primary-foreground/80 mb-6">
                       Book your appointment today. Same-day service available.
@@ -270,29 +219,36 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </CardContent>
                 </Card>
 
-                {/* Related services */}
+                {/* Related links */}
                 <Card>
                   <CardContent className="pt-6">
                     <h3 className="font-semibold text-foreground mb-4">
-                      Other Services
+                      More in {cityData.name}
                     </h3>
                     <div className="space-y-3">
-                      {relatedServices.map((related) => (
+                      {otherServicesInCity.map((related) => (
                         <Link
                           key={related.slug}
-                          href={`/services/${related.slug}`}
+                          href={`/services/${related.slug}/${cityData.slug}`}
                           className="flex items-center justify-between text-muted-foreground hover:text-primary transition-colors"
                         >
                           <span>{related.title}</span>
                           <ArrowRight className="h-4 w-4" />
                         </Link>
                       ))}
+                      <Link
+                        href={`/locations/${cityData.slug}`}
+                        className="flex items-center justify-between text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <span>All services in {cityData.name}</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
                     </div>
                     <Link
-                      href="/services"
+                      href={`/services/${service.slug}`}
                       className="block mt-4 text-sm font-medium text-primary hover:underline"
                     >
-                      View all services
+                      View full service details &amp; pricing
                     </Link>
                   </CardContent>
                 </Card>
