@@ -23,6 +23,7 @@ const quickLinks = [
   { name: "FAQ", href: "/faq" },
   { name: "Diagnostic Fee", href: "/diagnostic-fee" },
   { name: "Emergency Repair", href: "/emergency-repair" },
+  { name: "Customer Reviews", href: "/reviews" },
 ]
 
 export function Footer() {
