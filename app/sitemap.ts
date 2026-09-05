@@ -25,7 +25,7 @@ const STATIC_PAGE_DATES = {
   terms: "2026-08-09",
   diagnosticFee: "2026-08-09",
   emergencyRepair: "2026-08-09",
-  reviews: "2026-08-09",
+  reviews: "2026-08-13",
 }
 
 // Fallback last-edit dates for the dynamic collections. Individual entries can

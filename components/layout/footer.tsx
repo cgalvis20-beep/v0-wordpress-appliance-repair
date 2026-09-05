@@ -18,12 +18,12 @@ const quickLinks = [
   { name: "Service Areas", href: "/locations" },
   { name: "Brands We Service", href: "/brands" },
   { name: "Blog", href: "/blog" },
+  { name: "Reviews", href: "/reviews" },
   { name: "Contact Us", href: "/contact" },
   { name: "Book Online", href: "/booking" },
   { name: "FAQ", href: "/faq" },
   { name: "Diagnostic Fee", href: "/diagnostic-fee" },
   { name: "Emergency Repair", href: "/emergency-repair" },
-  { name: "Customer Reviews", href: "/reviews" },
 ]
 
 export function Footer() {

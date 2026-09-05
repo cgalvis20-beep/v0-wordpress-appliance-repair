@@ -91,13 +91,13 @@ export default function HomePage() {
               "Range Hood Repair",
             ],
             // Sourced from the business's Google Business Profile.
-            // Last verified: 2026-08-06. Update this figure whenever it's
+            // Last verified: 2026-08-13. Update this figure whenever it's
             // rechecked — do not let it drift silently out of sync with
             // the live listing (see SEO audit finding #1, 2026-08-06).
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "5.0",
-              reviewCount: "9",
+              reviewCount: "13",
             },
           }),
         }}
