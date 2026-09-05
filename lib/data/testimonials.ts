@@ -63,4 +63,25 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     text: "Delighted with service received from Carlos. Polite prompt pleasant and tidy.",
   },
+  {
+    id: 9,
+    name: "Matias Finardi",
+    location: "London, Ontario",
+    rating: 5,
+    text: "Huge thanks to My Appliance PRO for their incredibly fast and professional dishwasher repair in London! Our dishwasher was leaking and wouldn't drain properly, which was becoming a massive headache. The technician arrived right on schedule, diagnosed the issue immediately, and completed the fix with top-notch quality. Our machine is running flawlessly again, and they left the kitchen spotless. If you need a prompt, reliable appliance repair service in London, Ontario, this is definitely the company to call. Highly recommended!",
+  },
+  {
+    id: 10,
+    name: "Sandra March",
+    location: "London, Ontario",
+    rating: 5,
+    text: "Prompt. Good work, knowledgeable, friendly. Would highly recommend.",
+  },
+  {
+    id: 11,
+    name: "Lauri mota",
+    location: "London, Ontario",
+    rating: 5,
+    text: "Great service by Carlos! If you want a reliable, honest and affordable service repair on your appliances. Call Carlos My Appliance Pro",
+  },
 ]
