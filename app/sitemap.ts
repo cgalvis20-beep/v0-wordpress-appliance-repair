@@ -4,6 +4,7 @@ import { cities } from "@/lib/data/cities"
 import { brands } from "@/lib/data/brands"
 import { blogPosts } from "@/lib/data/blog-posts"
 import { serviceCityPages } from "@/lib/data/service-city-pages"
+import { brandIssuePages } from "@/lib/data/brand-issue-pages"
 
 const baseUrl = "https://myappliancepro.ca"
 
@@ -159,12 +160,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   )
 
+  const brandIssuePagesSitemap: MetadataRoute.Sitemap = brandIssuePages.map(
+    (p) => ({
+      url: `${baseUrl}/brands/${p.brandSlug}/${p.issueSlug}`,
+      lastModified: new Date(p.lastUpdated),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })
+  )
+
   return [
     ...staticPages,
     ...servicePages,
     ...locationPages,
     ...serviceCityPagesSitemap,
     ...brandPages,
+    ...brandIssuePagesSitemap,
     ...blogPages,
   ]
 }

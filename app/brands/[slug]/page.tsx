@@ -3,6 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { brands } from "@/lib/data/brands"
 import { services } from "@/lib/data/services"
+import { getBrandIssuePageByLabel } from "@/lib/data/brand-issue-pages"
 import { companyInfo } from "@/lib/data/company-info"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { FAQAccordion } from "@/components/shared/faq-accordion"
@@ -216,15 +217,28 @@ export default async function BrandPage({ params }: BrandPageProps) {
 
           <div className="mx-auto max-w-3xl">
             <div className="grid gap-4 sm:grid-cols-2">
-              {brand.commonIssues?.map((issue) => (
-                <div
-                  key={issue}
-                  className="flex items-center gap-3 rounded-lg bg-card p-4"
-                >
-                  <CheckCircle className="h-5 w-5 shrink-0 text-accent" />
-                  <span className="text-foreground">{issue}</span>
-                </div>
-              ))}
+              {brand.commonIssues?.map((issue) => {
+                const issuePage = getBrandIssuePageByLabel(brand.slug, issue)
+                return (
+                  <div
+                    key={issue}
+                    className="flex items-center gap-3 rounded-lg bg-card p-4"
+                  >
+                    <CheckCircle className="h-5 w-5 shrink-0 text-accent" />
+                    {issuePage ? (
+                      <Link
+                        href={`/brands/${brand.slug}/${issuePage.issueSlug}`}
+                        className="flex flex-1 items-center justify-between text-foreground hover:text-primary hover:underline transition-colors"
+                      >
+                        <span>{issue}</span>
+                        <ArrowRight className="h-4 w-4 shrink-0" />
+                      </Link>
+                    ) : (
+                      <span className="text-foreground">{issue}</span>
+                    )}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
