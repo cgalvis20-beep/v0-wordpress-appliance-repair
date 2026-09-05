@@ -137,11 +137,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const serviceCityPagesSitemap: MetadataRoute.Sitemap = serviceCityPages.map(
-    (page) => ({
-      url: `${baseUrl}/services/${page.serviceSlug}/${page.citySlug}`,
-      lastModified: new Date(page.lastUpdated),
+    (p) => ({
+      url: `${baseUrl}/services/${p.serviceSlug}/${p.citySlug}`,
+      lastModified: new Date(p.lastUpdated),
       changeFrequency: "monthly" as const,
-      priority: 0.75,
+      priority: 0.85,
     })
   )
 
