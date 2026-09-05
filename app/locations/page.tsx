@@ -89,8 +89,11 @@ export default function LocationsPage() {
                 </li>
               </ul>
             </div>
-            <div className="relative rounded-xl bg-gradient-to-br from-primary/10 via-muted to-accent/10 overflow-hidden border border-border p-4">
+            <div className="relative aspect-square lg:aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/10 via-muted to-accent/10 overflow-hidden border border-border p-4">
               <ServiceAreaMap cities={cities} />
+              <p className="absolute bottom-2 left-0 right-0 text-center text-xs text-muted-foreground/70">
+                Approximate service area — click a city to view details
+              </p>
             </div>
           </div>
         </div>
@@ -98,11 +101,13 @@ export default function LocationsPage() {
         {/* CTA */}
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground mb-4">
-            Don&apos;t See Your City?
+            Located Near One of These Areas?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            We may still be able to help! Give us a call to check if we service
-            your area.
+            London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg,
+            Aylmer, and Dorchester make up our full service area. If you&apos;re
+            just outside one of these communities, give us a call — we may
+            still be able to help.
           </p>
           <Button asChild size="lg" variant="outline">
             <a href={`tel:${companyInfo.phoneClean}`}>
