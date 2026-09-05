@@ -172,7 +172,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {brand.appliancesServiced?.map((appliance) => {
               const service = services.find(
-                (s) => s.name?.toLowerCase().includes(appliance?.toLowerCase() ?? "")
+                (s) => s.title?.toLowerCase().includes(appliance?.toLowerCase() ?? "")
               )
               return (
                 <Card key={appliance} className="transition-shadow hover:shadow-md">

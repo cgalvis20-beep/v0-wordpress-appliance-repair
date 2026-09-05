@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   async redirects() {
     return [
       // Consolidate the www host onto the canonical apex domain so Google
