@@ -12,7 +12,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { cities, getCityBySlug, getAllCitySlugs } from "@/lib/data/cities"
-import { services } from "@/lib/data/services"
+import { services, getServiceBySlug } from "@/lib/data/services"
+import { getServiceSlugsForCity } from "@/lib/data/service-city-pages"
 import { companyInfo } from "@/lib/data/company-info"
 
 interface LocationPageProps {
@@ -51,6 +52,11 @@ export default async function LocationPage({ params }: LocationPageProps) {
   }
 
   const otherCities = cities.filter((c) => c.slug !== city.slug).slice(0, 4)
+
+  // Service-specific landing pages that exist for this city, for internal links.
+  const servicePages = getServiceSlugsForCity(city.slug)
+    .map((serviceSlug) => getServiceBySlug(serviceSlug))
+    .filter((s): s is NonNullable<typeof s> => Boolean(s))
 
   return (
     <>
@@ -154,6 +160,31 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* City-specific service landing pages */}
+              {servicePages.length > 0 && (
+                <Card className="mb-8">
+                  <CardContent className="pt-6">
+                    <h2 className="text-xl font-semibold text-foreground mb-4">
+                      {city.name} by Service
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {servicePages.map((servicePage) => (
+                        <Link
+                          key={servicePage.slug}
+                          href={`/services/${servicePage.slug}/${city.slug}`}
+                          className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-muted/50 transition-colors"
+                        >
+                          <span className="font-medium text-foreground">
+                            {servicePage.title} in {city.name}
+                          </span>
+                          <ArrowRight className="h-4 w-4 text-primary shrink-0" />
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* Sidebar */}
