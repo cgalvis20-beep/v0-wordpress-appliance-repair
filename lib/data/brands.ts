@@ -9,6 +9,7 @@ export interface Brand {
   commonIssues: string[]
   whyChooseUs: string[]
   faqs: { question: string; answer: string }[]
+  lastUpdated?: string
 }
 
 export const brands: Brand[] = [

@@ -6,6 +6,7 @@ export interface City {
   description: string
   neighborhoods: string[]
   highlights: string[]
+  lastUpdated?: string
 }
 
 export const cities: City[] = [

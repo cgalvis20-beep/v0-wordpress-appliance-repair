@@ -9,6 +9,7 @@ export interface Service {
   commonProblems: string[]
   benefits: string[]
   faqs: { question: string; answer: string }[]
+  lastUpdated?: string
 }
 
 export const services: Service[] = [
