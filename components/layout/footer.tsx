@@ -22,6 +22,7 @@ const quickLinks = [
   { name: "Book Online", href: "/booking" },
   { name: "FAQ", href: "/faq" },
   { name: "Diagnostic Fee", href: "/diagnostic-fee" },
+  { name: "Emergency Repair", href: "/emergency-repair" },
 ]
 
 export function Footer() {

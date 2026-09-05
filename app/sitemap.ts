@@ -23,6 +23,7 @@ const STATIC_PAGE_DATES = {
   privacy: "2026-08-07",
   terms: "2026-08-09",
   diagnosticFee: "2026-08-09",
+  emergencyRepair: "2026-08-09",
 }
 
 // Fallback last-edit dates for the dynamic collections. Individual entries can
@@ -94,6 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(STATIC_PAGE_DATES.diagnosticFee),
       changeFrequency: "monthly",
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/emergency-repair`,
+      lastModified: new Date(STATIC_PAGE_DATES.emergencyRepair),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
