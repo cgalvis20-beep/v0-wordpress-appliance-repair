@@ -291,9 +291,6 @@ export default async function BrandPage({ params }: BrandPageProps) {
                   <span className="font-semibold text-foreground">Varies</span>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-muted-foreground">
-                * 20% of the service call fee is waived if you proceed with the repair
-              </p>
             </div>
           </div>
         </div>
