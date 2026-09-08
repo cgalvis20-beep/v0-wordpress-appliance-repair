@@ -30,7 +30,7 @@ const features = [
     icon: Award,
     title: "90-Day Warranty",
     description:
-      "We stand behind our work with a 90-day warranty on labour and a 120-day warranty on parts.",
+      "We stand behind our work with a 90-day warranty on all repairs.",
   },
   {
     icon: Truck,

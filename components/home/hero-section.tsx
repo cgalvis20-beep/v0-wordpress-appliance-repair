@@ -34,7 +34,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Get the fix you need with the protection you deserve. All work is backed by our 90-day labour and 120-day parts warranty, with new 6-month to 1-year extended warranty options available for premium repairs. Book your reliable, same-day appliance repair today!
+            Get the fix you need with the protection you deserve. All work is backed by our 90-day warranty, with new 6-month to 1-year extended warranty options available for premium repairs. Book your reliable, same-day appliance repair today!
           </p>
 
           {/* Highlights */}
