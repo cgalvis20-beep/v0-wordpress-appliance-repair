@@ -59,7 +59,7 @@ export default function BlogPage() {
                   ) : (
                     <div className="flex h-full items-center justify-center">
                       <span className="text-6xl text-muted-foreground/30">
-                        {featuredPost.category === "Maintenance" ? "🔧" : "💡"}
+                        {featuredPost.category === "Maintenance Tips" ? "🔧" : featuredPost.category === "Repair Guides" ? "🔍" : "💡"}
                       </span>
                     </div>
                   )}
@@ -109,7 +109,7 @@ export default function BlogPage() {
                     ) : (
                       <div className="flex h-full items-center justify-center">
                         <span className="text-4xl text-muted-foreground/30">
-                          {post.category === "Maintenance" ? "🔧" : post.category === "Troubleshooting" ? "🔍" : "💡"}
+                          {post.category === "Maintenance Tips" ? "🔧" : post.category === "Repair Guides" ? "🔍" : "💡"}
                         </span>
                       </div>
                     )}
