@@ -75,7 +75,7 @@ const serviceFAQs = [
   {
     question: "What if the repair doesn't work?",
     answer:
-      "All our repairs come with a 90-day warranty on parts and labor. If the same issue recurs within 90 days, we'll return and fix it at no additional charge.",
+      "All our repairs come with a 90-day warranty on labor and a 120-day warranty on parts (unless the manufacturer specifies a different period for that part). If the same issue recurs within the warranty period, we'll return and fix it at no additional charge. See our Terms of Service for full details, including exclusions.",
   },
   {
     question: "Should I repair or replace my appliance?",
