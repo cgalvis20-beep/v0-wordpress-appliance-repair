@@ -20,7 +20,7 @@ const steps = [
     icon: CheckCircle2,
     title: "Enjoy Your Working Appliance",
     description:
-      "Most repairs are completed on the first visit. All work is backed by our 90-day parts and labour warranty.",
+      "Most repairs are completed on the first visit. All work is backed by our 90-day labour and 120-day parts warranty.",
   },
 ]
 
