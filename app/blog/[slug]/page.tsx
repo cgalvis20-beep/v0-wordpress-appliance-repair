@@ -57,16 +57,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 // Simple markdown-like content renderer
-// Convert a limited subset of inline markdown (bold + links) to safe HTML.
-// Only internal ("/...") and https:// links are allowed as href values.
-function formatInline(text: string) {
+function formatInline(text: string): string {
+  // Links first: [text](url) -> <a>. Then bold: **text** -> <strong>.
   return text
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" class="text-primary hover:underline">$1</a>'
+    )
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>')
-    .replace(/\[([^\]]+)\]\((\/[^)\s]*|https:\/\/[^)\s]+)\)/g, (_match, label, href) => {
-      const isInternal = href.startsWith("/")
-      const rel = isInternal ? "" : ' rel="noopener noreferrer" target="_blank"'
-      return `<a href="${href}" class="text-primary font-medium underline underline-offset-2 hover:text-primary/80"${rel}>${label}</a>`
-    })
 }
 
 function renderContent(content: string) {
