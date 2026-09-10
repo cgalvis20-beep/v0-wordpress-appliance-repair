@@ -56,14 +56,19 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 }
 
-// Simple markdown-like content renderer
+// Simple markdown-like content renderer.
+// Links are restricted to internal ("/...") and https:// hrefs as a safeguard;
+// any other target (javascript:, http:, etc.) is left as plain link text.
 function formatInline(text: string): string {
   // Links first: [text](url) -> <a>. Then bold: **text** -> <strong>.
   return text
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" class="text-primary hover:underline">$1</a>'
-    )
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, href) => {
+      const isInternal = href.startsWith("/")
+      const isHttps = href.startsWith("https://")
+      if (!isInternal && !isHttps) return label
+      const rel = isInternal ? "" : ' rel="noopener noreferrer" target="_blank"'
+      return `<a href="${href}" class="text-primary hover:underline"${rel}>${label}</a>`
+    })
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>')
 }
 
