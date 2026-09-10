@@ -57,6 +57,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 // Simple markdown-like content renderer
+// Convert a limited subset of inline markdown (bold + links) to safe HTML.
+// Only internal ("/...") and https:// links are allowed as href values.
+function formatInline(text: string) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>')
+    .replace(/\[([^\]]+)\]\((\/[^)\s]*|https:\/\/[^)\s]+)\)/g, (_match, label, href) => {
+      const isInternal = href.startsWith("/")
+      const rel = isInternal ? "" : ' rel="noopener noreferrer" target="_blank"'
+      return `<a href="${href}" class="text-primary font-medium underline underline-offset-2 hover:text-primary/80"${rel}>${label}</a>`
+    })
+}
+
 function renderContent(content: string) {
   const lines = content.split("\n")
   const elements: React.ReactNode[] = []
@@ -70,7 +82,7 @@ function renderContent(content: string) {
           {currentList.map((item, i) => (
             <li key={i} className="flex items-start gap-2 text-muted-foreground">
               <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-              <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+              <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             </li>
           ))}
         </ul>
@@ -110,9 +122,7 @@ function renderContent(content: string) {
       <p 
         key={key++} 
         className="my-4 text-muted-foreground leading-relaxed"
-        dangerouslySetInnerHTML={{ 
-          __html: trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') 
-        }}
+        dangerouslySetInnerHTML={{ __html: formatInline(trimmedLine) }}
       />
     )
   }
