@@ -38,7 +38,7 @@ export async function generateMetadata({
     title: city.metaTitle,
     description: city.metaDescription,
     alternates: {
-      canonical: `/locations/${city.slug}`,
+      canonical: `https://myappliancepro.ca/locations/${city.slug}`,
     },
   }
 }

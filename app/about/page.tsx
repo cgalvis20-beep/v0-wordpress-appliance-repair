@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Learn about My Appliance Pro, London's trusted appliance repair service. Licensed technicians, same-day service, and a commitment to customer satisfaction.",
   alternates: {
-    canonical: '/about',
+    canonical: "https://myappliancepro.ca/about",
   },
 }
 
