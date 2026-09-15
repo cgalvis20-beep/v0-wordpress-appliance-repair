@@ -16,7 +16,7 @@ const STATIC_PAGE_DATES = {
   home: "2026-08-07",
   services: "2026-08-07",
   locations: "2026-08-07",
-  brands: "2026-05-11",
+  brands: "2026-09-14",
   booking: "2026-08-07",
   contact: "2026-08-07",
   about: "2026-08-07",
@@ -33,7 +33,7 @@ const STATIC_PAGE_DATES = {
 const COLLECTION_DEFAULT_DATES = {
   services: "2026-08-07",
   locations: "2026-08-07",
-  brands: "2026-05-11",
+  brands: "2026-09-14",
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -134,28 +134,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/services/${service.slug}`,
     lastModified: new Date(service.lastUpdated ?? COLLECTION_DEFAULT_DATES.services),
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: 0.9,
   }))
 
   const locationPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${baseUrl}/locations/${city.slug}`,
     lastModified: new Date(city.lastUpdated ?? COLLECTION_DEFAULT_DATES.locations),
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: 0.85,
   }))
 
   const brandPages: MetadataRoute.Sitemap = brands.map((brand) => ({
     url: `${baseUrl}/brands/${brand.slug}`,
     lastModified: new Date(brand.lastUpdated ?? COLLECTION_DEFAULT_DATES.brands),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.8,
   }))
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.publishedDate),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }))
 
   const serviceCityPagesSitemap: MetadataRoute.Sitemap = serviceCityPages.map(
