@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Book Appliance Repair Service",
   description:
     "Schedule your appliance repair appointment online. Same-day service available in London and surrounding areas. Fast, easy booking.",
+  alternates: {
+    canonical: '/booking',
+  },
 }
 
 const benefits = [
@@ -29,10 +32,10 @@ export default function BookingPage() {
             <h1 className="text-3xl font-bold text-foreground mb-4">
               Book Your Repair
             </h1>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="text-muted-foreground mb-6 text-base font-normal">
               Schedule your appliance repair appointment online. Select a
               convenient time and we&apos;ll handle the rest.
-            </p>
+            </h2>
 
             {/* Benefits list */}
             <div className="space-y-3 mb-8">

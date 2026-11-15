@@ -19,7 +19,7 @@ const badges = [
   {
     icon: Star,
     title: "5-Star Rated",
-    description: "Trusted by thousands",
+    description: "Trusted by 40+ customers",
   },
 ]
 

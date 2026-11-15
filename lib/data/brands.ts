@@ -1,5 +1,6 @@
 export interface Brand {
   slug: string
+  lastUpdated: string
   name: string
   tagline: string
   metaTitle: string
@@ -14,6 +15,7 @@ export interface Brand {
 export const brands: Brand[] = [
   {
     slug: "samsung",
+    lastUpdated: "2026-05-12",
     name: "Samsung",
     tagline: "Expert Samsung Appliance Repair",
     metaTitle: "Samsung Appliance Repair London ON | Certified Service | My Appliance Pro",
@@ -61,6 +63,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "lg",
+    lastUpdated: "2026-05-12",
     name: "LG",
     tagline: "Professional LG Appliance Service",
     metaTitle: "LG Appliance Repair London ON | Expert Service | My Appliance Pro",
@@ -108,6 +111,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "whirlpool",
+    lastUpdated: "2026-05-12",
     name: "Whirlpool",
     tagline: "Trusted Whirlpool Repair Service",
     metaTitle: "Whirlpool Appliance Repair London ON | All Models | My Appliance Pro",
@@ -156,6 +160,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "ge",
+    lastUpdated: "2026-05-12",
     name: "GE",
     tagline: "Factory-Trained GE Repair",
     metaTitle: "GE Appliance Repair London ON | Factory-Trained | My Appliance Pro",
@@ -204,6 +209,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "frigidaire",
+    lastUpdated: "2026-05-12",
     name: "Frigidaire",
     tagline: "Fast Frigidaire Appliance Repair",
     metaTitle: "Frigidaire Appliance Repair London ON | Fast Service | My Appliance Pro",
@@ -251,6 +257,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "maytag",
+    lastUpdated: "2026-05-12",
     name: "Maytag",
     tagline: "Reliable Maytag Repair Service",
     metaTitle: "Maytag Appliance Repair London ON | Trusted Service | My Appliance Pro",
@@ -297,6 +304,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "kitchenaid",
+    lastUpdated: "2026-05-12",
     name: "KitchenAid",
     tagline: "Premium KitchenAid Appliance Service",
     metaTitle: "KitchenAid Appliance Repair London ON | Premium Service | My Appliance Pro",
@@ -344,6 +352,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "bosch",
+    lastUpdated: "2026-05-12",
     name: "Bosch",
     tagline: "German-Engineered Bosch Repair",
     metaTitle: "Bosch Appliance Repair London ON | German Engineering | My Appliance Pro",

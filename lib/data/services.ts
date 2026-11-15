@@ -1,5 +1,6 @@
 export interface Service {
   slug: string
+  lastUpdated: string
   title: string
   metaTitle: string
   metaDescription: string
@@ -14,6 +15,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "refrigerator-repair",
+    lastUpdated: "2026-07-24",
     title: "Refrigerator Repair",
     metaTitle: "Refrigerator Repair London ON | Same-Day Service | My Appliance Pro",
     metaDescription:
@@ -60,6 +62,7 @@ export const services: Service[] = [
   },
   {
     slug: "washer-repair",
+    lastUpdated: "2026-07-24",
     title: "Washer Repair",
     metaTitle: "Washing Machine Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
@@ -106,6 +109,7 @@ export const services: Service[] = [
   },
   {
     slug: "dryer-repair",
+    lastUpdated: "2026-07-24",
     title: "Dryer Repair",
     metaTitle: "Dryer Repair London ON | Fast Service | My Appliance Pro",
     metaDescription:
@@ -126,7 +130,7 @@ export const services: Service[] = [
       "Door won't close",
     ],
     benefits: [
-      "Gas and electric dryers",
+      "Electric dryers",
       "Same-day service",
       "90-day warranty",
       "Upfront pricing",
@@ -152,6 +156,7 @@ export const services: Service[] = [
   },
   {
     slug: "dishwasher-repair",
+    lastUpdated: "2026-07-24",
     title: "Dishwasher Repair",
     metaTitle: "Dishwasher Repair London ON | Expert Service | My Appliance Pro",
     metaDescription:
@@ -198,6 +203,7 @@ export const services: Service[] = [
   },
   {
     slug: "oven-repair",
+    lastUpdated: "2026-07-24",
     title: "Oven Repair",
     metaTitle: "Oven Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
@@ -244,6 +250,7 @@ export const services: Service[] = [
   },
   {
     slug: "stove-repair",
+    lastUpdated: "2026-07-24",
     title: "Stove Repair",
     metaTitle: "Stove Repair London ON | Gas & Electric | My Appliance Pro",
     metaDescription:
@@ -290,6 +297,7 @@ export const services: Service[] = [
   },
   {
     slug: "range-repair",
+    lastUpdated: "2026-07-24",
     title: "Range Repair",
     metaTitle: "Range Repair London ON | Expert Service | My Appliance Pro",
     metaDescription:
@@ -336,6 +344,7 @@ export const services: Service[] = [
   },
   {
     slug: "freezer-repair",
+    lastUpdated: "2026-07-24",
     title: "Freezer Repair",
     metaTitle: "Freezer Repair London ON | Fast Service | My Appliance Pro",
     metaDescription:
@@ -382,6 +391,7 @@ export const services: Service[] = [
   },
   {
     slug: "microwave-repair",
+    lastUpdated: "2026-07-24",
     title: "Microwave Repair",
     metaTitle: "Microwave Repair London ON | All Brands | My Appliance Pro",
     metaDescription:
@@ -428,6 +438,7 @@ export const services: Service[] = [
   },
   {
     slug: "cooktop-repair",
+    lastUpdated: "2026-07-24",
     title: "Cooktop Repair",
     metaTitle: "Cooktop Repair London ON | Gas & Electric | My Appliance Pro",
     metaDescription:
@@ -474,6 +485,7 @@ export const services: Service[] = [
   },
   {
     slug: "range-hood-repair",
+    lastUpdated: "2026-07-24",
     title: "Range Hood Repair",
     metaTitle: "Range Hood Repair London ON | All Brands | My Appliance Pro",
     metaDescription:

@@ -6,11 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { cities } from "@/lib/data/cities"
 import { companyInfo } from "@/lib/data/company-info"
+import { ServiceAreaMap } from "@/components/locations/service-area-map"
 
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "MyappliancePro provides appliance repair services in London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg, Aylmer, and Dorchester.",
+    "My Appliance Pro provides appliance repair services in London, St. Thomas, and Dorchester, Ontario.",
+  alternates: {
+    canonical: '/locations',
+  },
 }
 
 export default function LocationsPage() {
@@ -25,9 +29,9 @@ export default function LocationsPage() {
             Areas We Serve
           </h1>
           <p className="text-lg text-muted-foreground">
-            We provide professional appliance repair services throughout
-            Southwestern Ontario. Find your city below to learn more about our
-            local service.
+            We provide professional appliance repair in London, St. Thomas,
+            and Dorchester. Find your city below to learn more about our local
+            service.
           </p>
         </div>
 
@@ -63,11 +67,11 @@ export default function LocationsPage() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                Serving All of Southwestern Ontario
+                Serving London, St. Thomas &amp; Dorchester
               </h2>
               <p className="text-muted-foreground mb-6">
-                Our service area extends throughout the London region. We
-                provide the same high-quality service to all our communities,
+                Our service area includes London, St. Thomas, and Dorchester.
+                We provide the same high-quality service to all our communities,
                 with same-day appointments often available.
               </p>
               <ul className="space-y-2 text-foreground">
@@ -85,50 +89,11 @@ export default function LocationsPage() {
                 </li>
               </ul>
             </div>
-            <div className="relative aspect-square lg:aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/10 via-muted to-accent/10 overflow-hidden border border-border">
-              {/* Stylized map illustration */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-full h-full p-8">
-                  {/* Map dots representing cities */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative">
-                      {/* Central London marker */}
-                      <div className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                        <div className="h-4 w-4 rounded-full bg-primary animate-pulse" />
-                        <span className="mt-1 text-xs font-medium text-foreground bg-background/80 px-2 py-0.5 rounded">
-                          London
-                        </span>
-                      </div>
-                      {/* Surrounding cities */}
-                      {[
-                        { name: "Woodstock", x: 60, y: -50 },
-                        { name: "St. Thomas", x: -20, y: 70 },
-                        { name: "Strathroy", x: -70, y: -30 },
-                        { name: "Ingersoll", x: 80, y: 20 },
-                        { name: "Tillsonburg", x: 40, y: 80 },
-                        { name: "Aylmer", x: 100, y: 60 },
-                        { name: "Dorchester", x: 20, y: 40 },
-                      ].map((city) => (
-                        <div
-                          key={city.name}
-                          className="absolute flex flex-col items-center"
-                          style={{
-                            transform: `translate(${city.x}px, ${city.y}px)`,
-                          }}
-                        >
-                          <div className="h-2.5 w-2.5 rounded-full bg-accent" />
-                          <span className="mt-0.5 text-[10px] text-muted-foreground whitespace-nowrap">
-                            {city.name}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  {/* Service area circle */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border-2 border-dashed border-primary/30" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-2 border-dashed border-accent/30" />
-                </div>
-              </div>
+            <div className="relative aspect-square lg:aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/10 via-muted to-accent/10 overflow-hidden border border-border p-4">
+              <ServiceAreaMap cities={cities} />
+              <p className="absolute bottom-2 left-0 right-0 text-center text-xs text-muted-foreground/70">
+                Approximate service area — click a city to view details
+              </p>
             </div>
           </div>
         </div>
@@ -136,11 +101,12 @@ export default function LocationsPage() {
         {/* CTA */}
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground mb-4">
-            Don&apos;t See Your City?
+            Located Near One of These Areas?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            We may still be able to help! Give us a call to check if we service
-            your area.
+            London, St. Thomas, and Dorchester are our service areas. If
+            you&apos;re just outside one of these communities, give us a call —
+            we may still be able to help.
           </p>
           <Button asChild size="lg" variant="outline">
             <a href={`tel:${companyInfo.phoneClean}`}>

@@ -23,6 +23,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { FAQAccordion } from "@/components/shared/faq-accordion"
 import { services, getServiceBySlug, getAllServiceSlugs } from "@/lib/data/services"
+import { getCityBySlug } from "@/lib/data/cities"
+import { getCitySlugsForService } from "@/lib/data/service-city-pages"
 import { companyInfo } from "@/lib/data/company-info"
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -60,6 +62,9 @@ export async function generateMetadata({
   return {
     title: service.metaTitle,
     description: service.metaDescription,
+    alternates: {
+      canonical: `/services/${service.slug}`,
+    },
   }
 }
 
@@ -75,6 +80,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const relatedServices = services
     .filter((s) => s.slug !== service.slug)
     .slice(0, 3)
+
+  // City-specific landing pages that exist for this service, for internal links.
+  const cityPages = getCitySlugsForService(service.slug)
+    .map((citySlug) => getCityBySlug(citySlug))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c))
 
   return (
     <>
@@ -97,6 +107,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
               name: "London, Ontario",
             },
             serviceType: service.title,
+          }),
+        }}
+      />
+
+      {/* JSON-LD FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: service.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
           }),
         }}
       />
@@ -176,6 +205,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </h2>
                 <FAQAccordion faqs={service.faqs} />
               </div>
+
+              {/* City-specific landing pages */}
+              {cityPages.length > 0 && (
+                <Card className="mb-8">
+                  <CardContent className="pt-6">
+                    <h2 className="text-xl font-semibold text-foreground mb-4">
+                      {service.title} by Area
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {cityPages.map((cityPage) => (
+                        <Link
+                          key={cityPage.slug}
+                          href={`/services/${service.slug}/${cityPage.slug}`}
+                          className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-primary/30 hover:bg-muted/50 transition-colors"
+                        >
+                          <span className="font-medium text-foreground">
+                            {service.title} in {cityPage.name}
+                          </span>
+                          <ArrowRight className="h-4 w-4 text-primary shrink-0" />
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* Sidebar */}

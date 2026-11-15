@@ -29,12 +29,12 @@ export function HeroSection() {
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight text-balance">
             Fast, Reliable{" "}
-            <span className="text-primary">Appliance Repair</span>{" "}in London &amp; Area
+            <span className="text-primary">Appliance Repair</span>{" "}in London, St. Thomas &amp; Dorchester
           </h1>
 
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            {companyInfo.tagline}. Licensed technicians, upfront pricing, and a 90-day warranty on all repairs.
+            Get the fix you need with the protection you deserve. All work is backed by our 90-day warranty, with new 6-month to 1-year extended warranty options available for premium repairs. Book your reliable, same-day appliance repair today!
           </p>
 
           {/* Highlights */}
@@ -65,7 +65,7 @@ export function HeroSection() {
 
           {/* Trust text */}
           <p className="mt-6 text-sm text-muted-foreground">
-            Trusted by thousands of homeowners across Southwestern Ontario
+            Trusted by 40+ homeowners across Southwestern Ontario
           </p>
         </div>
       </div>

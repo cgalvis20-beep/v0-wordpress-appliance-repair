@@ -10,7 +10,10 @@ import { companyInfo } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact MyappliancePro for appliance repair in London and surrounding areas. Call, email, or fill out our contact form. Same-day service available.",
+    "Contact My Appliance Pro for appliance repair in London and surrounding areas. Call, email, or fill out our contact form. Same-day service available.",
+  alternates: {
+    canonical: '/contact',
+  },
 }
 
 export default function ContactPage() {
@@ -24,10 +27,10 @@ export default function ContactPage() {
           <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Contact Us
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-lg text-muted-foreground font-normal">
             Have a question or ready to schedule your repair? We&apos;re here to
             help. Reach out to us using any of the methods below.
-          </p>
+          </h2>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -85,11 +88,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <address className="not-italic text-foreground">
-                  {companyInfo.address.street}
-                  <br />
-                  {companyInfo.address.city}, {companyInfo.address.province}
-                  <br />
-                  {companyInfo.address.postalCode}
+                  London, Ontario. N6C 5H5
                 </address>
               </CardContent>
             </Card>

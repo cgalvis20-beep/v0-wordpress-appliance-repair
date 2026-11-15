@@ -19,15 +19,31 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const formData = new FormData(e.currentTarget)
+    const firstName = formData.get("firstName") as string
+    const lastName = formData.get("lastName") as string
+    const email = formData.get("email") as string
+    const phone = formData.get("phone") as string
+    const service = formData.get("service") as string
+    const message = formData.get("message") as string
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    const subject = encodeURIComponent(`Service Request from ${firstName} ${lastName}`)
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nAppliance Type: ${service || "Not specified"}\n\nMessage:\n${message}`
+    )
+
+    // Open mailto link in new tab
+    window.open(`mailto:info@myappliancepro.ca?subject=${subject}&body=${body}`, '_blank')
+
+    // Show success after a short delay
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+    }, 500)
   }
 
   if (isSubmitted) {
@@ -39,10 +55,10 @@ export function ContactForm() {
           </div>
         </div>
         <h3 className="text-xl font-semibold text-foreground mb-2">
-          Message Sent!
+          Almost done!
         </h3>
         <p className="text-muted-foreground">
-          Thank you for contacting us. We&apos;ll get back to you within 24 hours.
+          Please hit Send when the pop-up email appears.
         </p>
       </div>
     )

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
 import { companyInfo, serviceAreas } from "@/lib/data/company-info"
 
@@ -17,25 +18,31 @@ const quickLinks = [
   { name: "Service Areas", href: "/locations" },
   { name: "Brands We Service", href: "/brands" },
   { name: "Blog", href: "/blog" },
+  { name: "Reviews", href: "/reviews" },
   { name: "Contact Us", href: "/contact" },
   { name: "Book Online", href: "/booking" },
   { name: "FAQ", href: "/faq" },
+  { name: "Diagnostic Fee", href: "/diagnostic-fee" },
+  { name: "Emergency Repair", href: "/emergency-repair" },
 ]
 
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-accent-foreground font-bold text-lg">
-                M
-              </div>
-              <span className="font-bold text-xl">{companyInfo.name}</span>
-            </div>
+            <Link href="/">
+              <Image
+                src="/images/myappliancepro-logo.jpg"
+                alt={`${companyInfo.name} logo`}
+                width={234}
+                height={65}
+                className="h-16 w-auto bg-white rounded p-1"
+              />
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               {companyInfo.description}
             </p>

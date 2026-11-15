@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { companyInfo } from "@/lib/data/company-info"
@@ -28,8 +29,7 @@ const navigation = [
     children: [
       { name: "London", href: "/locations/london" },
       { name: "St. Thomas", href: "/locations/st-thomas" },
-      { name: "Woodstock", href: "/locations/woodstock" },
-      { name: "Strathroy", href: "/locations/strathroy" },
+      { name: "Dorchester", href: "/locations/dorchester" },
       { name: "View All Locations", href: "/locations" },
     ],
   },
@@ -50,7 +50,7 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-10 items-center justify-between text-sm">
             <p className="hidden sm:block">
-              Serving London &amp; Surrounding Areas
+              Serving London, St. Thomas &amp; Dorchester
             </p>
             <a
               href={`tel:${companyInfo.phoneClean}`}
@@ -67,13 +67,15 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-              M
-            </div>
-            <span className="font-bold text-xl text-foreground">
-              {companyInfo.name}
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/myappliancepro-logo.jpg"
+              alt={`${companyInfo.name} logo`}
+              width={234}
+              height={65}
+              className="h-16 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop navigation */}

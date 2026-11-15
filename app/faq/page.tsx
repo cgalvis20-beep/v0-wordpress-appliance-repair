@@ -9,14 +9,17 @@ import { companyInfo } from "@/lib/data/company-info"
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Find answers to common questions about our appliance repair services, pricing, warranty, and more. MyappliancePro - London's trusted repair service.",
+    "Find answers to common questions about our appliance repair services, pricing, warranty, and more. My Appliance Pro - London's trusted repair service.",
+  alternates: {
+    canonical: '/faq',
+  },
 }
 
 const generalFAQs = [
   {
     question: "What areas do you serve?",
     answer:
-      "We provide appliance repair services throughout Southwestern Ontario, including London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg, Aylmer, and Dorchester.",
+      "We provide appliance repair services in London, St. Thomas, and Dorchester.",
   },
   {
     question: "Do you offer same-day service?",
@@ -39,12 +42,12 @@ const pricingFAQs = [
   {
     question: "How much does appliance repair cost?",
     answer:
-      "Repair costs vary depending on the appliance type and the specific issue. We charge a diagnostic fee of $99, which 35% is waived if you proceed with the repair. After diagnosis, we provide an upfront quote so you know exactly what to expect before any work begins.",
+      "Repair costs vary depending on the appliance type and the specific issue. We charge a diagnostic fee of $124 CAD. After diagnosis, we provide an upfront quote so you know exactly what to expect before any work begins.",
   },
   {
     question: "Do you charge for estimates?",
     answer:
-      "We charge a $89 diagnostic fee for the technician to come to your home and diagnose the problem. This fee is waived if you proceed with the repair. Phone estimates are free, but an in-person diagnosis is needed for an accurate repair quote.",
+      "We charge a $124 CAD diagnostic fee for a technician to come to your home and accurately diagnose the problem. While we are happy to provide free phone estimates, an in-person diagnosis is required to give you a precise repair quote.",
   },
   {
     question: "What payment methods do you accept?",
@@ -72,7 +75,7 @@ const serviceFAQs = [
   {
     question: "What if the repair doesn't work?",
     answer:
-      "All our repairs come with a 90-day warranty on parts and labor. If the same issue recurs within 90 days, we'll return and fix it at no additional charge.",
+      "All our repairs come with a 90-day warranty on labor and a 120-day warranty on parts (unless the manufacturer specifies a different period for that part). If the same issue recurs within the warranty period, we'll return and fix it at no additional charge. See our Terms of Service for full details, including exclusions.",
   },
   {
     question: "Should I repair or replace my appliance?",

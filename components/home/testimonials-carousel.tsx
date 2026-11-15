@@ -66,7 +66,7 @@ export function TestimonialsCarousel() {
                         {testimonial.name}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        {testimonial.location} &bull; {testimonial.service}
+                        {testimonial.location}
                       </p>
                     </div>
                   </CardContent>
@@ -98,8 +98,7 @@ export function TestimonialsCarousel() {
                     {testimonials[currentIndex].name}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    {testimonials[currentIndex].location} &bull;{" "}
-                    {testimonials[currentIndex].service}
+                    {testimonials[currentIndex].location}
                   </p>
                 </div>
               </CardContent>

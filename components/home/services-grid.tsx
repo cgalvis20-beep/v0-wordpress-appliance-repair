@@ -43,7 +43,7 @@ export function ServicesGrid() {
             Appliance Repair Services
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            We repair all major household appliances. From refrigerators to dishwashers, our expert technicians have you covered.
+            We repair all major household appliances from refrigerators to dishwashers. Our expert technicians have you covered.
           </p>
         </div>
 

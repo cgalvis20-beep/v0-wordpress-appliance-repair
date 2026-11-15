@@ -3,15 +3,16 @@ export const companyInfo = {
   phone: "(519) 617-8350",
   phoneClean: "5196178350",
   email: "info@myappliancepro.ca",
+  // Service-area business — no public storefront/street address.
+  // See SEO audit finding #2, confirmed 2026-08-06.
   address: {
-    street: "123 Dundas Street",
     city: "London",
     province: "Ontario",
-    postalCode: "N6A 1G7",
+    postalCode: "N6C 5H5",
     country: "Canada",
   },
   hours: {
-    weekdays: "8:30 AM - 4:30 PM",
+    weekdays: "8:30 AM - 6:00 PM",
     saturday: "9:00 AM - 2:00 PM",
     sunday: "10:00 AM - 1:00 PM",
   },
@@ -19,21 +20,12 @@ export const companyInfo = {
     google: "https://g.page/myappliancepro",
   },
   calendlyUrl: "https://calendly.com/cgalvis20/30min",
-  tagline: "Fast, Reliable Appliance Repair in London & Surrounding Areas",
+  tagline: "Fast, Reliable Appliance Repair in London, St. Thomas & Dorchester",
   description:
-    "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by thousands of homeowners.",
+    "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by 40+ homeowners.",
 }
 
-export const serviceAreas = [
-  "London",
-  "St. Thomas",
-  "Woodstock",
-  "Strathroy",
-  "Ingersoll",
-  "Tillsonburg",
-  "Aylmer",
-  "Dorchester",
-]
+export const serviceAreas = ["London", "St. Thomas", "Dorchester"]
 
 export const trustBadges = [
   {
@@ -54,6 +46,6 @@ export const trustBadges = [
   {
     icon: "Star",
     title: "5-Star Rated",
-    description: "Trusted by thousands",
+    description: "Trusted by 40+ customers",
   },
 ]

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { brands } from "@/lib/data/brands"
 import { services } from "@/lib/data/services"
+import { getBrandIssuePageByLabel } from "@/lib/data/brand-issue-pages"
 import { companyInfo } from "@/lib/data/company-info"
 import { Breadcrumbs } from "@/components/shared/breadcrumbs"
 import { FAQAccordion } from "@/components/shared/faq-accordion"
@@ -43,6 +44,9 @@ export async function generateMetadata({ params }: BrandPageProps): Promise<Meta
   return {
     title: `${brand.name} Appliance Repair | ${companyInfo.name}`,
     description: brand.metaDescription,
+    alternates: {
+      canonical: `/brands/${brand.slug}`,
+    },
     openGraph: {
       title: `${brand.name} Appliance Repair | ${companyInfo.name}`,
       description: brand.metaDescription,
@@ -54,7 +58,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
   const { slug } = await params
   const brand = brands.find((b) => b.slug === slug)
 
-  if (!brand) {
+  if (!brand || !brand.appliancesServiced || !brand.commonIssues || !brand.whyChooseUs || !brand.faqs) {
     notFound()
   }
 
@@ -167,9 +171,9 @@ export default async function BrandPage({ params }: BrandPageProps) {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {brand.appliancesServiced.map((appliance) => {
+            {brand.appliancesServiced?.map((appliance) => {
               const service = services.find(
-                (s) => s.name.toLowerCase().includes(appliance.toLowerCase())
+                (s) => s.title?.toLowerCase().includes(appliance?.toLowerCase() ?? "")
               )
               return (
                 <Card key={appliance} className="transition-shadow hover:shadow-md">
@@ -213,15 +217,28 @@ export default async function BrandPage({ params }: BrandPageProps) {
 
           <div className="mx-auto max-w-3xl">
             <div className="grid gap-4 sm:grid-cols-2">
-              {brand.commonIssues.map((issue) => (
-                <div
-                  key={issue}
-                  className="flex items-center gap-3 rounded-lg bg-card p-4"
-                >
-                  <CheckCircle className="h-5 w-5 shrink-0 text-accent" />
-                  <span className="text-foreground">{issue}</span>
-                </div>
-              ))}
+              {brand.commonIssues?.map((issue) => {
+                const issuePage = getBrandIssuePageByLabel(brand.slug, issue)
+                return (
+                  <div
+                    key={issue}
+                    className="flex items-center gap-3 rounded-lg bg-card p-4"
+                  >
+                    <CheckCircle className="h-5 w-5 shrink-0 text-accent" />
+                    {issuePage ? (
+                      <Link
+                        href={`/brands/${brand.slug}/${issuePage.issueSlug}`}
+                        className="flex flex-1 items-center justify-between text-foreground hover:text-primary hover:underline transition-colors"
+                      >
+                        <span>{issue}</span>
+                        <ArrowRight className="h-4 w-4 shrink-0" />
+                      </Link>
+                    ) : (
+                      <span className="text-foreground">{issue}</span>
+                    )}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -236,7 +253,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
                 Why Choose {companyInfo.name} for {brand.name} Repairs?
               </h2>
               <div className="space-y-4">
-                {brand.whyChooseUs.map((reason, index) => (
+                {brand.whyChooseUs?.map((reason, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-accent" />
                     <p className="text-muted-foreground">{reason}</p>
@@ -263,7 +280,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
               <div className="space-y-3">
                 <div className="flex justify-between border-b border-border pb-2">
                   <span className="text-muted-foreground">Service Call / Diagnosis</span>
-                  <span className="font-semibold text-foreground">$89</span>
+                  <span className="font-semibold text-foreground">$124</span>
                 </div>
                 <div className="flex justify-between border-b border-border pb-2">
                   <span className="text-muted-foreground">Labor (most repairs)</span>
@@ -274,9 +291,6 @@ export default async function BrandPage({ params }: BrandPageProps) {
                   <span className="font-semibold text-foreground">Varies</span>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-muted-foreground">
-                * Service call fee is waived if you proceed with the repair
-              </p>
             </div>
           </div>
         </div>
@@ -378,7 +392,6 @@ export default async function BrandPage({ params }: BrandPageProps) {
               telephone: companyInfo.phone,
               address: {
                 "@type": "PostalAddress",
-                streetAddress: companyInfo.address.street,
                 addressLocality: companyInfo.address.city,
                 addressRegion: companyInfo.address.province,
                 postalCode: companyInfo.address.postalCode,
@@ -390,6 +403,25 @@ export default async function BrandPage({ params }: BrandPageProps) {
               "@type": "City",
               name: "London, Ontario",
             },
+          }),
+        }}
+      />
+
+      {/* JSON-LD FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: brand.faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
           }),
         }}
       />

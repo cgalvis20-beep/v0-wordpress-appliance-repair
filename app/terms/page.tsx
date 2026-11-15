@@ -5,7 +5,10 @@ import { Phone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: `Terms of Service for ${companyInfo.name}. Read our terms governing appliance repair services in London, St. Thomas, Woodstock, and surrounding areas.`,
+  description: `Terms of Service for ${companyInfo.name}. Read our terms governing appliance repair services in London, St. Thomas, and Dorchester.`,
+  alternates: {
+    canonical: '/terms',
+  },
 }
 
 export default function TermsPage() {
@@ -37,23 +40,19 @@ export default function TermsPage() {
                 1. Acceptance of Terms
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                By accessing the {companyInfo.name} website or booking a service appointment, you agree to be bound by these Terms of Service and all applicable Canadian laws. These terms govern all services provided by {companyInfo.name} in London, Saint Thomas, Woodstock, and surrounding areas.
+                By accessing the {companyInfo.name} website or booking a service appointment, you agree to be bound by these Terms of Service and all applicable Canadian laws. These terms govern all services provided by {companyInfo.name} in London, St. Thomas, and Dorchester.
               </p>
             </div>
 
             {/* Section 2 */}
             <div className="mb-10">
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                2. Diagnostic Services and Fee Waiver
+                2. Diagnostic Services
               </h2>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span><strong>Diagnostic Fee:</strong> A flat-rate Diagnostic Fee is charged for every service visit. This fee covers the technician&apos;s travel, time, and professional assessment of the appliance.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="text-primary font-bold">•</span>
-                  <span><strong>35% Fee Waiver:</strong> If you choose to proceed with the repair recommended during the initial diagnostic visit, 35% of the Diagnostic Fee will be credited toward the total labor cost of that specific repair. The remaining 65% of the Diagnostic Fee remains as a charge for the professional assessment service rendered.</span>
+                  <span><strong>Diagnostic Fee:</strong> We charge a flat $124 CAD diagnostic fee for every service visit. This ensures our technician can travel to your home, dedicate the necessary time, and comprehensively assess your appliance.</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>

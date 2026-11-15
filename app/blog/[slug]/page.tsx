@@ -43,6 +43,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.metaDescription,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.metaDescription,
@@ -53,7 +56,22 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 }
 
-// Simple markdown-like content renderer
+// Simple markdown-like content renderer.
+// Links are restricted to internal ("/...") and https:// hrefs as a safeguard;
+// any other target (javascript:, http:, etc.) is left as plain link text.
+function formatInline(text: string): string {
+  // Links first: [text](url) -> <a>. Then bold: **text** -> <strong>.
+  return text
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, href) => {
+      const isInternal = href.startsWith("/")
+      const isHttps = href.startsWith("https://")
+      if (!isInternal && !isHttps) return label
+      const rel = isInternal ? "" : ' rel="noopener noreferrer" target="_blank"'
+      return `<a href="${href}" class="text-primary hover:underline"${rel}>${label}</a>`
+    })
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>')
+}
+
 function renderContent(content: string) {
   const lines = content.split("\n")
   const elements: React.ReactNode[] = []
@@ -67,7 +85,7 @@ function renderContent(content: string) {
           {currentList.map((item, i) => (
             <li key={i} className="flex items-start gap-2 text-muted-foreground">
               <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-              <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+              <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             </li>
           ))}
         </ul>
@@ -107,9 +125,7 @@ function renderContent(content: string) {
       <p 
         key={key++} 
         className="my-4 text-muted-foreground leading-relaxed"
-        dangerouslySetInnerHTML={{ 
-          __html: trimmedLine.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') 
-        }}
+        dangerouslySetInnerHTML={{ __html: formatInline(trimmedLine) }}
       />
     )
   }
@@ -178,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="mb-8 overflow-hidden rounded-xl">
                 <Image
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt || post.title}
                   width={800}
                   height={500}
                   className="w-full h-auto object-cover"

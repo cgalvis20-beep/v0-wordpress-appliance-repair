@@ -88,20 +88,39 @@ export default function BrandsPage() {
             {/* Brand cards - showing 2 at a time */}
             <div className="grid grid-cols-2 gap-6">
               {visibleBrands.map((brand) => (
-                <Card key={brand.slug} className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-                  <CardContent className="flex h-full flex-col items-center p-8 text-center">
-                    <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-secondary">
-                      <Wrench className="h-10 w-10 text-primary" />
-                    </div>
-                    <h3 className="mb-2 text-2xl font-bold text-foreground">
-                      {brand.name}
-                    </h3>
-                    <p className="flex-1 text-sm text-muted-foreground">
-                      {brand.tagline}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+                <Link key={brand.slug} href={`/brands/${brand.slug}`}>
+                  <Card className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+                    <CardContent className="flex h-full flex-col items-center p-8 text-center">
+                      <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-secondary">
+                        <Wrench className="h-10 w-10 text-primary" />
+                      </div>
+                      <h3 className="mb-2 text-2xl font-bold text-foreground">
+                        {brand.name}
+                      </h3>
+                      <p className="flex-1 text-sm text-muted-foreground">
+                        {brand.tagline}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))} 
+            </div>
+
+            <div className="mt-10 rounded-xl border border-border bg-muted/30 p-6">
+              <h2 className="mb-4 text-center text-xl font-semibold text-foreground">
+                Browse All Brands We Service
+              </h2>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+                {brands.map((brand) => (
+                  <Link
+                    key={brand.slug}
+                    href={`/brands/${brand.slug}`}
+                    className="font-medium text-primary hover:underline"
+                  >
+                    {brand.name} appliance repair
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* Pagination dots */}
