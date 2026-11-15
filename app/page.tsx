@@ -46,6 +46,7 @@ export default function HomePage() {
               longitude: -81.2453,
             },
             url: "https://myappliancepro.ca",
+            sameAs: [companyInfo.social.google],
             openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",
