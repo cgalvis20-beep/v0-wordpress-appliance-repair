@@ -11,10 +11,10 @@ export function ServiceAreas() {
           {/* Content */}
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-balance">
-              Serving London &amp; Surrounding Areas
+              Serving London, St. Thomas &amp; Dorchester
             </h2>
             <p className="mt-4 text-lg text-muted-foreground text-pretty">
-              We provide appliance repair services throughout Southwestern Ontario. Our technicians travel to your location, saving you time and hassle.
+              We provide appliance repair services in London, St. Thomas, and Dorchester. Our technicians travel to your location, saving you time and hassle.
             </p>
 
             {/* City list */}
@@ -57,12 +57,7 @@ export function ServiceAreas() {
                       </div>
                       {/* Surrounding cities */}
                       {[
-                        { name: "Woodstock", x: 60, y: -50 },
                         { name: "St. Thomas", x: -20, y: 70 },
-                        { name: "Strathroy", x: -70, y: -30 },
-                        { name: "Ingersoll", x: 80, y: 20 },
-                        { name: "Tillsonburg", x: 40, y: 80 },
-                        { name: "Aylmer", x: 100, y: 60 },
                         { name: "Dorchester", x: 20, y: 40 },
                       ].map((city) => (
                         <div

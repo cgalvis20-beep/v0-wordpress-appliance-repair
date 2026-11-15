@@ -6,11 +6,6 @@
 const CITY_POSITIONS: Record<string, { x: number; y: number }> = {
   london: { x: 350, y: 260 },
   "st-thomas": { x: 375, y: 376 },
-  woodstock: { x: 552, y: 179 },
-  strathroy: { x: 199, y: 275 },
-  ingersoll: { x: 497, y: 230 },
-  tillsonburg: { x: 558, y: 326 },
-  aylmer: { x: 456, y: 381 },
   dorchester: { x: 422, y: 261 },
 }
 
@@ -24,7 +19,7 @@ export function ServiceAreaMap({ cities }: ServiceAreaMapProps) {
       viewBox="0 0 700 500"
       className="w-full h-auto"
       role="img"
-      aria-label="Map of our service area across Southwestern Ontario, with London at the center"
+      aria-label="Map of our service area in London, St. Thomas, and Dorchester"
     >
       {/* Approximate service-area boundary, for visual context only */}
       <circle

@@ -526,7 +526,7 @@ Dryer vents, refrigerator condenser coils, and dishwasher filters are all things
 
 ## Know Who to Call
 
-Find a local appliance repair service before you need one under pressure. We serve London and the surrounding area, including [St. Thomas](/locations/st-thomas), [Woodstock](/locations/woodstock), [Strathroy](/locations/strathroy), and more, so you're not searching for a technician for the first time during an actual breakdown.
+Find a local appliance repair service before you need one under pressure. We serve London, [St. Thomas](/locations/st-thomas), and [Dorchester](/locations/dorchester), so you're not searching for a technician for the first time during an actual breakdown.
 
 ## Settling In?
 

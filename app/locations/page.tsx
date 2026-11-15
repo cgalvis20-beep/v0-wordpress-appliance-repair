@@ -11,7 +11,7 @@ import { ServiceAreaMap } from "@/components/locations/service-area-map"
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "My Appliance Pro provides appliance repair services in London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg, Aylmer, and Dorchester.",
+    "My Appliance Pro provides appliance repair services in London, St. Thomas, and Dorchester, Ontario.",
   alternates: {
     canonical: '/locations',
   },
@@ -29,9 +29,9 @@ export default function LocationsPage() {
             Areas We Serve
           </h1>
           <p className="text-lg text-muted-foreground">
-            We provide professional appliance repair services throughout
-            Southwestern Ontario. Find your city below to learn more about our
-            local service.
+            We provide professional appliance repair in London, St. Thomas,
+            and Dorchester. Find your city below to learn more about our local
+            service.
           </p>
         </div>
 
@@ -67,11 +67,11 @@ export default function LocationsPage() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                Serving All of Southwestern Ontario
+                Serving London, St. Thomas &amp; Dorchester
               </h2>
               <p className="text-muted-foreground mb-6">
-                Our service area extends throughout the London region. We
-                provide the same high-quality service to all our communities,
+                Our service area includes London, St. Thomas, and Dorchester.
+                We provide the same high-quality service to all our communities,
                 with same-day appointments often available.
               </p>
               <ul className="space-y-2 text-foreground">
@@ -104,10 +104,9 @@ export default function LocationsPage() {
             Located Near One of These Areas?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg,
-            Aylmer, and Dorchester make up our full service area. If you&apos;re
-            just outside one of these communities, give us a call — we may
-            still be able to help.
+            London, St. Thomas, and Dorchester are our service areas. If
+            you&apos;re just outside one of these communities, give us a call —
+            we may still be able to help.
           </p>
           <Button asChild size="lg" variant="outline">
             <a href={`tel:${companyInfo.phoneClean}`}>

@@ -19,7 +19,7 @@ const generalFAQs = [
   {
     question: "What areas do you serve?",
     answer:
-      "We provide appliance repair services throughout Southwestern Ontario, including London, St. Thomas, Woodstock, Strathroy, Ingersoll, Tillsonburg, Aylmer, and Dorchester.",
+      "We provide appliance repair services in London, St. Thomas, and Dorchester.",
   },
   {
     question: "Do you offer same-day service?",

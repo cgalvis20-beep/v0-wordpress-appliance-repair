@@ -20,21 +20,12 @@ export const companyInfo = {
     google: "https://g.page/myappliancepro",
   },
   calendlyUrl: "https://calendly.com/cgalvis20/30min",
-  tagline: "Fast, Reliable Appliance Repair in London & Surrounding Areas",
+  tagline: "Fast, Reliable Appliance Repair in London, St. Thomas & Dorchester",
   description:
     "My Appliance Pro provides expert appliance repair services for all major brands. Same-day service available. Licensed, insured, and trusted by 40+ homeowners.",
 }
 
-export const serviceAreas = [
-  "London",
-  "St. Thomas",
-  "Woodstock",
-  "Strathroy",
-  "Ingersoll",
-  "Tillsonburg",
-  "Aylmer",
-  "Dorchester",
-]
+export const serviceAreas = ["London", "St. Thomas", "Dorchester"]
 
 export const trustBadges = [
   {

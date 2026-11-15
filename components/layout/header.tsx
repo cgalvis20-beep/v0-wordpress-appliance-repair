@@ -29,8 +29,7 @@ const navigation = [
     children: [
       { name: "London", href: "/locations/london" },
       { name: "St. Thomas", href: "/locations/st-thomas" },
-      { name: "Woodstock", href: "/locations/woodstock" },
-      { name: "Strathroy", href: "/locations/strathroy" },
+      { name: "Dorchester", href: "/locations/dorchester" },
       { name: "View All Locations", href: "/locations" },
     ],
   },
@@ -51,7 +50,7 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-10 items-center justify-between text-sm">
             <p className="hidden sm:block">
-              Serving London &amp; Surrounding Areas
+              Serving London, St. Thomas &amp; Dorchester
             </p>
             <a
               href={`tel:${companyInfo.phoneClean}`}

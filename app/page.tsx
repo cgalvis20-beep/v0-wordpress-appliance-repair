@@ -70,11 +70,6 @@ export default function HomePage() {
             areaServed: [
               "London, ON",
               "St. Thomas, ON",
-              "Woodstock, ON",
-              "Strathroy, ON",
-              "Ingersoll, ON",
-              "Tillsonburg, ON",
-              "Aylmer, ON",
               "Dorchester, ON",
             ],
             serviceType: [
