@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "signs-refrigerator-needs-repair",
     title: "5 Signs Your Refrigerator Needs Repair",
-    metaTitle: "5 Signs Your Refrigerator Needs Repair | My Appliance Pro Blog",
+    metaTitle: "5 Signs Your Refrigerator Needs Repair",
     metaDescription:
       "Learn the warning signs that indicate your refrigerator needs professional repair. Don't wait until it's too late. Read our expert guide.",
     excerpt:
@@ -50,7 +50,7 @@ If you're seeing any of these red flags, contact My Appliance Pro to book a same
   {
     slug: "extend-washer-dryer-life",
     title: "How to Extend the Life of Your Washer and Dryer",
-    metaTitle: "Extend Your Washer & Dryer Lifespan | My Appliance Pro Tips",
+    metaTitle: "Extend Your Washer & Dryer Lifespan",
     metaDescription:
       "Expert tips to extend the life of your washer and dryer. Simple maintenance steps that save money and prevent breakdowns. Read now!",
     excerpt:
@@ -80,7 +80,7 @@ We service washers and dryers from all major brands across London and the surrou
   {
     slug: "diy-vs-professional-repair",
     title: "DIY vs. Professional Appliance Repair: When to Call an Expert",
-    metaTitle: "DIY vs. Professional Appliance Repair | My Appliance Pro Guide",
+    metaTitle: "DIY vs. Professional Appliance Repair",
     metaDescription:
       "Should you DIY or call a professional for appliance repair? Learn which repairs are safe to tackle yourself and when to call an expert.",
     excerpt:
@@ -108,7 +108,7 @@ Not sure whether your repair is a DIY job or not? Contact our team. We handle ev
   {
     slug: "choosing-right-technician",
     title: "How to Choose the Right Appliance Repair Technician",
-    metaTitle: "Choosing an Appliance Repair Technician | My Appliance Pro Guide",
+    metaTitle: "Choosing an Appliance Repair Technician",
     metaDescription:
       "Learn how to choose a reliable appliance repair technician. What to look for, questions to ask, and red flags to avoid.",
     excerpt:
@@ -136,7 +136,7 @@ If you're weighing your options, contact My Appliance Pro. We're upfront about p
   {
     slug: "common-dishwasher-problems",
     title: "Common Dishwasher Problems and How to Fix Them",
-    metaTitle: "Common Dishwasher Problems & Solutions | My Appliance Pro",
+    metaTitle: "Common Dishwasher Problems & Solutions",
     metaDescription:
       "Dishwasher not cleaning? Not draining? Learn about common dishwasher problems, what causes them, and when to call for professional repair.",
     excerpt:
@@ -164,7 +164,7 @@ Is your unit acting up? Contact My Appliance Pro to book a same-day dishwasher d
   {
     slug: "appliance-repair-cost-guide",
     title: "How Much Does Appliance Repair Cost in London, Ontario?",
-    metaTitle: "Appliance Repair Cost Guide | My Appliance Pro",
+    metaTitle: "Appliance Repair Cost Guide",
     metaDescription:
       "What does appliance repair actually cost in London, Ontario? A real breakdown of our diagnostic fee, labor, and parts pricing, with no guesswork.",
     excerpt:
@@ -203,7 +203,7 @@ The only way to know your exact cost is a diagnosis, since guessing at pricing w
   {
     slug: "repair-or-replace-appliance",
     title: "Should I Repair or Replace My Appliance? A Simple Decision Framework",
-    metaTitle: "Repair or Replace Your Appliance? | My Appliance Pro",
+    metaTitle: "Repair or Replace Your Appliance?",
     metaDescription:
       "Not sure whether to repair or replace a broken appliance? A simple, honest framework to help you decide, based on age, repair cost, and repair history.",
     excerpt:
@@ -239,7 +239,7 @@ Book a diagnostic visit and we'll give you an honest read on repair versus repla
   {
     slug: "appliance-repair-warranty-coverage",
     title: "Appliance Repair Warranty: What's Actually Covered?",
-    metaTitle: "Appliance Repair Warranty Coverage | My Appliance Pro",
+    metaTitle: "Appliance Repair Warranty Coverage",
     metaDescription:
       "What does our appliance repair warranty actually cover? Real terms on labor, parts, and exclusions, straight from our Terms of Service.",
     excerpt:
@@ -278,7 +278,7 @@ If you're not sure whether something is covered, ask us directly, either before 
   {
     slug: "same-day-appliance-repair-what-to-expect",
     title: "Same-Day Appliance Repair: What to Expect",
-    metaTitle: "Same-Day Appliance Repair: What to Expect | My Appliance Pro",
+    metaTitle: "Same-Day Appliance Repair: What to Expect",
     metaDescription:
       "Booked a same-day appliance repair? Here's exactly what happens: arrival windows, what to prep, and when same-day service isn't possible.",
     excerpt:
@@ -317,7 +317,7 @@ Call us as early in the day as you can for the best chance of same-day service, 
   {
     slug: "dishwasher-not-draining-causes",
     title: "Dishwasher Not Draining? 6 Causes and What a Repair Actually Involves",
-    metaTitle: "Dishwasher Not Draining? 6 Real Causes | My Appliance Pro",
+    metaTitle: "Dishwasher Not Draining? 6 Real Causes",
     metaDescription:
       "Dishwasher leaving standing water? Here are the 6 real causes of dishwasher drainage failure and what a professional repair actually involves for each.",
     excerpt:
@@ -362,7 +362,7 @@ If cleaning the filter didn't solve it, the cause is likely further along in the
   {
     slug: "refrigerator-noise-guide",
     title: "Refrigerator Making Noise? Here's What Each Sound Means",
-    metaTitle: "Refrigerator Noise Guide: What Each Sound Means | My Appliance Pro",
+    metaTitle: "Refrigerator Noise: What Sounds Mean",
     metaDescription:
       "Clicking, buzzing, rattling, or squealing from your fridge? Here's what each specific sound usually means and whether it needs a repair.",
     excerpt:
@@ -407,7 +407,7 @@ Describe the sound when you call, and we'll give you a sense of what it likely i
   {
     slug: "washer-dryer-diy-vs-professional",
     title: "Washer vs. Dryer Repair: When to Call a Pro vs. DIY",
-    metaTitle: "Washer & Dryer Repair: DIY vs. Professional | My Appliance Pro",
+    metaTitle: "Washer & Dryer Repair: DIY vs Pro",
     metaDescription:
       "Washers and dryers combine water and high-voltage electricity in ways that make some repairs genuinely dangerous to DIY. Here's the real line.",
     excerpt:
@@ -446,7 +446,7 @@ If you're unsure whether your specific issue is safe to attempt, call us and des
   {
     slug: "how-long-do-appliances-last",
     title: "How Long Do Appliances Really Last?",
-    metaTitle: "How Long Do Appliances Really Last? | My Appliance Pro",
+    metaTitle: "How Long Do Appliances Really Last?",
     metaDescription:
       "Real, typical lifespans for refrigerators, washers, dryers, dishwashers, and ovens, and what actually determines how long yours lasts.",
     excerpt:
@@ -497,7 +497,7 @@ Whether your appliance is 2 years old or 12, we can diagnose the issue and give 
   {
     slug: "new-homeowner-appliance-checklist",
     title: "Moving to London, Ontario? A New Homeowner's Appliance Checklist",
-    metaTitle: "New Homeowner Appliance Checklist | My Appliance Pro",
+    metaTitle: "New Homeowner Appliance Checklist",
     metaDescription:
       "Just moved to London, Ontario or the surrounding area? A practical checklist for getting to know your new home's appliances before something goes wrong.",
     excerpt:
@@ -538,7 +538,7 @@ If anything in your new home needs a closer look, or you just want a baseline ch
   {
     slug: "energy-star-vs-standard-appliances",
     title: "Energy Star vs. Standard Appliances: Is Repair or Upgrade the Smarter Move?",
-    metaTitle: "Energy Star vs. Standard Appliances | My Appliance Pro",
+    metaTitle: "Energy Star vs. Standard Appliances",
     metaDescription:
       "Deciding between repairing your current appliance or upgrading to an Energy Star model? A practical, honest look at when each makes sense.",
     excerpt:

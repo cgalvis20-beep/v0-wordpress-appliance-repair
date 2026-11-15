@@ -17,7 +17,7 @@ export const services: Service[] = [
     slug: "refrigerator-repair",
     lastUpdated: "2026-07-24",
     title: "Refrigerator Repair",
-    metaTitle: "Refrigerator Repair London ON | Same-Day Service | My Appliance Pro",
+    metaTitle: "Refrigerator Repair London ON",
     metaDescription:
       "Expert refrigerator repair in London and surrounding areas. We fix all brands including Samsung, LG, Whirlpool. Same-day service available. Call now!",
     icon: "Refrigerator",
@@ -64,7 +64,7 @@ export const services: Service[] = [
     slug: "washer-repair",
     lastUpdated: "2026-07-24",
     title: "Washer Repair",
-    metaTitle: "Washing Machine Repair London ON | All Brands | My Appliance Pro",
+    metaTitle: "Washing Machine Repair London ON",
     metaDescription:
       "Professional washer repair in London, Ontario. Fix leaks, spin issues, drainage problems. Same-day service for all brands. Call for fast service!",
     icon: "WashingMachine",
@@ -111,7 +111,7 @@ export const services: Service[] = [
     slug: "dryer-repair",
     lastUpdated: "2026-07-24",
     title: "Dryer Repair",
-    metaTitle: "Dryer Repair London ON | Fast Service | My Appliance Pro",
+    metaTitle: "Dryer Repair London ON",
     metaDescription:
       "Expert dryer repair in London and area. Fix heating issues, tumbling problems, strange noises. Same-day appointments. All brands serviced.",
     icon: "Fan",
@@ -158,7 +158,7 @@ export const services: Service[] = [
     slug: "dishwasher-repair",
     lastUpdated: "2026-07-24",
     title: "Dishwasher Repair",
-    metaTitle: "Dishwasher Repair London ON | Expert Service | My Appliance Pro",
+    metaTitle: "Dishwasher Repair London ON",
     metaDescription:
       "Professional dishwasher repair in London. Not cleaning? Not draining? We fix all brands quickly. Same-day service available. Call now!",
     icon: "Sparkles",
@@ -205,7 +205,7 @@ export const services: Service[] = [
     slug: "oven-repair",
     lastUpdated: "2026-07-24",
     title: "Oven Repair",
-    metaTitle: "Oven Repair London ON | All Brands | My Appliance Pro",
+    metaTitle: "Oven Repair London ON",
     metaDescription:
       "Expert oven repair in London, Ontario. Not heating? Temperature issues? We fix all oven types and brands. Same-day service available.",
     icon: "Flame",
@@ -252,7 +252,7 @@ export const services: Service[] = [
     slug: "stove-repair",
     lastUpdated: "2026-07-24",
     title: "Stove Repair",
-    metaTitle: "Stove Repair London ON | Gas & Electric | My Appliance Pro",
+    metaTitle: "Stove Repair London ON",
     metaDescription:
       "Professional stove repair in London. Burner not working? Ignition issues? We repair all stove types. Same-day service. Call now!",
     icon: "CookingPot",
@@ -299,7 +299,7 @@ export const services: Service[] = [
     slug: "range-repair",
     lastUpdated: "2026-07-24",
     title: "Range Repair",
-    metaTitle: "Range Repair London ON | Expert Service | My Appliance Pro",
+    metaTitle: "Range Repair London ON",
     metaDescription:
       "Expert range repair in London. Cooktop and oven issues? We fix all range types and brands. Same-day appointments available.",
     icon: "ChefHat",
@@ -346,7 +346,7 @@ export const services: Service[] = [
     slug: "freezer-repair",
     lastUpdated: "2026-07-24",
     title: "Freezer Repair",
-    metaTitle: "Freezer Repair London ON | Fast Service | My Appliance Pro",
+    metaTitle: "Freezer Repair London ON",
     metaDescription:
       "Professional freezer repair in London and area. Not freezing? Frost buildup? We fix all freezer types. Same-day service available.",
     icon: "Snowflake",
@@ -393,7 +393,7 @@ export const services: Service[] = [
     slug: "microwave-repair",
     lastUpdated: "2026-07-24",
     title: "Microwave Repair",
-    metaTitle: "Microwave Repair London ON | All Brands | My Appliance Pro",
+    metaTitle: "Microwave Repair London ON",
     metaDescription:
       "Expert microwave repair in London. Not heating? Turntable issues? We fix countertop and built-in microwaves. Call for service!",
     icon: "Zap",
@@ -440,7 +440,7 @@ export const services: Service[] = [
     slug: "cooktop-repair",
     lastUpdated: "2026-07-24",
     title: "Cooktop Repair",
-    metaTitle: "Cooktop Repair London ON | Gas & Electric | My Appliance Pro",
+    metaTitle: "Cooktop Repair London ON",
     metaDescription:
       "Professional cooktop repair in London. Gas, electric, and induction cooktops. Burner issues? We fix all brands. Same-day service.",
     icon: "Gauge",
@@ -487,7 +487,7 @@ export const services: Service[] = [
     slug: "range-hood-repair",
     lastUpdated: "2026-07-24",
     title: "Range Hood Repair",
-    metaTitle: "Range Hood Repair London ON | All Brands | My Appliance Pro",
+    metaTitle: "Range Hood Repair London ON",
     metaDescription:
       "Expert range hood repair in London. Fan not working? Light issues? We repair all range hood types. Call for same-day service!",
     icon: "Wind",

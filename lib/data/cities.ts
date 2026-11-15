@@ -14,7 +14,7 @@ export const cities: City[] = [
     slug: "london",
     lastUpdated: "2026-05-11",
     name: "London",
-    metaTitle: "Appliance Repair London ON | Same-Day Service | My Appliance Pro",
+    metaTitle: "Appliance Repair London ON",
     metaDescription:
       "Professional appliance repair in London, Ontario. Same-day service for refrigerators, washers, dryers, and more. Licensed technicians. Call now!",
     description:
@@ -44,7 +44,7 @@ export const cities: City[] = [
     slug: "st-thomas",
     lastUpdated: "2026-05-11",
     name: "St. Thomas",
-    metaTitle: "Appliance Repair St. Thomas ON | Fast Service | My Appliance Pro",
+    metaTitle: "Appliance Repair St. Thomas ON",
     metaDescription:
       "Expert appliance repair in St. Thomas, Ontario. We fix refrigerators, washers, dryers, dishwashers. Same-day appointments. Call today!",
     description:
@@ -68,7 +68,7 @@ export const cities: City[] = [
     slug: "dorchester",
     lastUpdated: "2026-05-11",
     name: "Dorchester",
-    metaTitle: "Appliance Repair Dorchester ON | Local Service | My Appliance Pro",
+    metaTitle: "Appliance Repair Dorchester ON",
     metaDescription:
       "Local appliance repair in Dorchester, Ontario. Fast, reliable service for all major appliances. Same-day appointments. Call now!",
     description:
