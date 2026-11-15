@@ -28,12 +28,74 @@ declare global {
 const CAL_SCRIPT_URL = "https://app.cal.com/embed/embed.js"
 const CAL_NAMESPACE = "30min"
 const CAL_LINK = "carlos-galvis-62ij3z/30min"
+const CAL_ELEMENT_ID = "my-cal-inline-30min"
+
+let calScriptPromise: Promise<void> | undefined
+
+function loadCalScript() {
+  if (calScriptPromise) return calScriptPromise
+
+  if (!window.Cal) {
+    const cal = ((...args: unknown[]) => {
+      cal.q = cal.q || []
+      cal.q.push(args)
+    }) as CalApi
+    cal.q = []
+    cal.ns = {}
+
+    const namespace: CalNamespace = (...args: unknown[]) => {
+      namespace.q = namespace.q || []
+      namespace.q.push(args)
+    }
+    namespace.q = []
+    cal.ns[CAL_NAMESPACE] = namespace
+    cal.q.push(["initNamespace", CAL_NAMESPACE])
+    window.Cal = cal
+  }
+
+  calScriptPromise = new Promise<void>((resolve, reject) => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      `script[src="${CAL_SCRIPT_URL}"]`,
+    )
+
+    if (existingScript) {
+      if (window.Cal?.loaded) {
+        resolve()
+      } else {
+        existingScript.addEventListener("load", () => resolve(), { once: true })
+        existingScript.addEventListener(
+          "error",
+          () => reject(new Error("Unable to load the Cal.com embed.")),
+          { once: true },
+        )
+      }
+      return
+    }
+
+    const script = document.createElement("script")
+    script.src = CAL_SCRIPT_URL
+    script.async = true
+    script.addEventListener("load", () => resolve(), { once: true })
+    script.addEventListener(
+      "error",
+      () => reject(new Error("Unable to load the Cal.com embed.")),
+      { once: true },
+    )
+    document.head.appendChild(script)
+  })
+
+  return calScriptPromise
+}
 
 function configureCal(elementId: string) {
   const cal = window.Cal
-  const namespace = cal?.ns?.[CAL_NAMESPACE]
+  if (!cal) return
 
-  if (!cal || !namespace) return
+  cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" })
+  cal.config = { ...cal.config, forwardQueryParams: true }
+
+  const namespace = cal.ns?.[CAL_NAMESPACE]
+  if (!namespace) return
 
   namespace("inline", {
     elementOrSelector: `#${elementId}`,
@@ -50,52 +112,26 @@ function configureCal(elementId: string) {
 }
 
 export function CalendlyEmbed({ height = 700 }: CalendlyEmbedProps) {
-  const elementId = "my-cal-inline-30min"
-
   useEffect(() => {
-    const existingCal = window.Cal
+    let active = true
 
-    if (!existingCal) {
-      const cal = ((...args: unknown[]) => {
-        cal.q = cal.q || []
-        cal.q.push(args)
-      }) as CalApi
-      cal.q = []
-      cal.ns = {}
-      window.Cal = cal
+    loadCalScript()
+      .then(() => {
+        if (active) configureCal(CAL_ELEMENT_ID)
+      })
+      .catch(() => {
+        // Keep the phone fallback available if the booking embed cannot load.
+      })
 
-      const namespace: CalNamespace = (...args: unknown[]) => {
-        namespace.q = namespace.q || []
-        namespace.q.push(args)
-      }
-      namespace.q = []
-      cal.ns[CAL_NAMESPACE] = namespace
-      cal.q.push(["initNamespace", CAL_NAMESPACE])
-
-      const script = document.createElement("script")
-      script.src = CAL_SCRIPT_URL
-      script.async = true
-      document.head.appendChild(script)
-    }
-
-    const cal = window.Cal
-    if (!cal) return
-
-    cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" })
-    cal.config = cal.config || {}
-    cal.config.forwardQueryParams = true
-
-    const namespace = cal.ns?.[CAL_NAMESPACE]
-    if (namespace) {
-      configureCal(elementId)
-    } else {
-      window.setTimeout(() => configureCal(elementId), 0)
+    return () => {
+      active = false
+      document.getElementById(CAL_ELEMENT_ID)?.replaceChildren()
     }
   }, [])
 
   return (
     <div
-      id={elementId}
+      id={CAL_ELEMENT_ID}
       className="w-full overflow-scroll rounded-lg border border-border"
       style={{ minWidth: "320px", height: `${height}px` }}
     />
