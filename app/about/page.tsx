@@ -89,7 +89,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 {companyInfo.name} was founded with a simple mission: to provide
-                London and surrounding areas with honest, reliable appliance
+                London, St. Thomas and Dorchester with honest, reliable appliance
                 repair service. What started as a one-person operation has grown
                 into a team of skilled technicians serving homeowners across
                 Southwestern Ontario.

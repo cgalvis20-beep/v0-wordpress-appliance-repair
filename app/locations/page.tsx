@@ -11,7 +11,7 @@ import { ServiceAreaMap } from "@/components/locations/service-area-map"
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "My Appliance Pro provides appliance repair services in London, St. Thomas, and Dorchester, Ontario.",
+    "Appliance repair in London, St. Thomas and Dorchester, Ontario. Same-day service for refrigerators, washers, dryers, dishwashers and ovens. Book today.",
   alternates: {
     canonical: '/locations',
   },
