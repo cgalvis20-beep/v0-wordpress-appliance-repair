@@ -72,13 +72,8 @@ export const cities: City[] = [
     metaDescription:
       "Local appliance repair in Dorchester, Ontario. Fast, reliable service for all major appliances. Same-day appointments. Call now!",
     description:
-      "Dorchester residents trust My Appliance Pro for local, reliable appliance repair service. We serve the Dorchester community with the same commitment to quality and customer satisfaction that has made us the region's preferred appliance repair service.",
-    neighborhoods: [
-      "Dorchester Village",
-      "Hamilton Road Area",
-      "Belmont Area",
-      "Harrietsville Area",
-    ],
+      "My Appliance Pro serves Dorchester, Ontario for refrigerator, washer, dryer, dishwasher and oven repair, with same-day service available and a 90-day warranty on repairs.",
+    neighborhoods: ["Dorchester Village"],
     highlights: [
       "Local to Dorchester",
       "Fast response times",
