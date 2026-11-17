@@ -19,7 +19,7 @@ export const brandIssuePages: BrandIssuePage[] = [
     lastUpdated: "2026-08-12",
     matchedCommonIssue: "Ice maker not working",
     title: "Samsung Refrigerator Ice Maker Not Working",
-    metaTitle: "Samsung Refrigerator Ice Maker Not Working | My Appliance Pro",
+    metaTitle: "Samsung Refrigerator Ice Maker Repair",
     metaDescription:
       "Samsung ice maker not making ice or jammed with frost? We diagnose and repair Samsung refrigerator ice makers, including twin cooling models. Same-day service.",
     symptoms:
@@ -52,7 +52,7 @@ export const brandIssuePages: BrandIssuePage[] = [
     lastUpdated: "2026-08-12",
     matchedCommonIssue: "Linear compressor problems",
     title: "LG Refrigerator Linear Compressor Problems",
-    metaTitle: "LG Refrigerator Linear Compressor Repair | My Appliance Pro",
+    metaTitle: "LG Refrigerator Linear Compressor Repair",
     metaDescription:
       "LG refrigerator not cooling or making unusual compressor noise? We diagnose and repair LG's linear compressor systems. Same-day service available.",
     symptoms:
@@ -84,7 +84,7 @@ export const brandIssuePages: BrandIssuePage[] = [
     lastUpdated: "2026-08-12",
     matchedCommonIssue: "Washer not draining",
     title: "Whirlpool Washer Not Draining",
-    metaTitle: "Whirlpool Washer Not Draining | My Appliance Pro",
+    metaTitle: "Whirlpool Washer Not Draining",
     metaDescription:
       "Whirlpool washer stuck with standing water? We diagnose and repair drain pump, hose, and filter issues on Whirlpool washers. Same-day service available.",
     symptoms:
@@ -116,7 +116,7 @@ export const brandIssuePages: BrandIssuePage[] = [
     lastUpdated: "2026-08-12",
     matchedCommonIssue: "Dryer heating element failure",
     title: "GE Dryer Not Heating (Heating Element Failure)",
-    metaTitle: "GE Dryer Not Heating | Heating Element Repair | My Appliance Pro",
+    metaTitle: "GE Dryer Not Heating",
     metaDescription:
       "GE dryer running but not heating? We diagnose and repair heating element and thermal fuse failures on GE dryers. Same-day service available.",
     symptoms:
@@ -148,7 +148,7 @@ export const brandIssuePages: BrandIssuePage[] = [
     lastUpdated: "2026-08-12",
     matchedCommonIssue: "Refrigerator running constantly",
     title: "Frigidaire Refrigerator Running Constantly",
-    metaTitle: "Frigidaire Refrigerator Running Constantly | My Appliance Pro",
+    metaTitle: "Frigidaire Refrigerator Runs Constantly",
     metaDescription:
       "Frigidaire fridge compressor never shutting off? We diagnose condenser, seal, and thermostat issues on Frigidaire refrigerators. Same-day service available.",
     symptoms:
@@ -180,7 +180,7 @@ export const brandIssuePages: BrandIssuePage[] = [
     lastUpdated: "2026-08-12",
     matchedCommonIssue: "Washer not agitating",
     title: "Maytag Washer Not Agitating",
-    metaTitle: "Maytag Washer Not Agitating | My Appliance Pro",
+    metaTitle: "Maytag Washer Not Agitating",
     metaDescription:
       "Maytag washer spinning but not agitating? We diagnose and repair agitator, drive belt, and motor coupling issues on Maytag washers. Same-day service.",
     symptoms:
