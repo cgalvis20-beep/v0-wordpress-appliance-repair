@@ -18,7 +18,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "Samsung",
     tagline: "Expert Samsung Appliance Repair",
-    metaTitle: "Samsung Appliance Repair London ON | Certified Service | My Appliance Pro",
+    metaTitle: "Samsung Appliance Repair London ON",
     metaDescription:
       "Expert Samsung appliance repair in London. We fix Samsung refrigerators, washers, dryers, dishwashers. Certified technicians. Call now!",
     description:
@@ -66,7 +66,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "LG",
     tagline: "Professional LG Appliance Service",
-    metaTitle: "LG Appliance Repair London ON | Expert Service | My Appliance Pro",
+    metaTitle: "LG Appliance Repair London ON",
     metaDescription:
       "Professional LG appliance repair in London. Refrigerators, washers, dryers, dishwashers. Same-day service. Call My Appliance Pro!",
     description:
@@ -114,7 +114,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "Whirlpool",
     tagline: "Trusted Whirlpool Repair Service",
-    metaTitle: "Whirlpool Appliance Repair London ON | All Models | My Appliance Pro",
+    metaTitle: "Whirlpool Appliance Repair London ON",
     metaDescription:
       "Reliable Whirlpool appliance repair in London. We service all Whirlpool models. Same-day appointments. Call for expert service!",
     description:
@@ -163,7 +163,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "GE",
     tagline: "Factory-Trained GE Repair",
-    metaTitle: "GE Appliance Repair London ON | Factory-Trained | My Appliance Pro",
+    metaTitle: "GE Appliance Repair London ON",
     metaDescription:
       "Expert GE appliance repair in London, Ontario. All GE appliances serviced. Factory-trained technicians. Call for same-day service!",
     description:
@@ -212,7 +212,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "Frigidaire",
     tagline: "Fast Frigidaire Appliance Repair",
-    metaTitle: "Frigidaire Appliance Repair London ON | Fast Service | My Appliance Pro",
+    metaTitle: "Frigidaire Appliance Repair London ON",
     metaDescription:
       "Professional Frigidaire appliance repair in London. Refrigerators, freezers, ranges, dishwashers. Quick service. Call today!",
     description:
@@ -260,7 +260,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "Maytag",
     tagline: "Reliable Maytag Repair Service",
-    metaTitle: "Maytag Appliance Repair London ON | Trusted Service | My Appliance Pro",
+    metaTitle: "Maytag Appliance Repair London ON",
     metaDescription:
       "Reliable Maytag appliance repair in London. Expert service for all Maytag appliances. Same-day appointments. Call My Appliance Pro!",
     description:
@@ -307,7 +307,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "KitchenAid",
     tagline: "Premium KitchenAid Appliance Service",
-    metaTitle: "KitchenAid Appliance Repair London ON | Premium Service | My Appliance Pro",
+    metaTitle: "KitchenAid Appliance Repair London ON",
     metaDescription:
       "Expert KitchenAid appliance repair in London. Premium service for KitchenAid refrigerators, dishwashers, ranges. Call now!",
     description:
@@ -355,7 +355,7 @@ export const brands: Brand[] = [
     lastUpdated: "2026-05-12",
     name: "Bosch",
     tagline: "German-Engineered Bosch Repair",
-    metaTitle: "Bosch Appliance Repair London ON | German Engineering | My Appliance Pro",
+    metaTitle: "Bosch Appliance Repair London ON",
     metaDescription:
       "Professional Bosch appliance repair in London. Expert service for Bosch dishwashers, washers, dryers, refrigerators. Call today!",
     description:
