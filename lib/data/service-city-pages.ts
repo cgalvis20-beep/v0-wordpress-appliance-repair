@@ -18,7 +18,7 @@ export const serviceCityPages: ServiceCityPage[] = [
     serviceSlug: "refrigerator-repair",
     citySlug: "st-thomas",
     lastUpdated: "2026-08-11",
-    metaTitle: "Refrigerator Repair St. Thomas ON | Same-Day Service",
+    metaTitle: "Refrigerator Repair St. Thomas ON",
     metaDescription:
       "Fast, reliable refrigerator repair in St. Thomas, Ontario. We fix cooling issues, ice makers, and more for all major brands. Book same-day service today.",
     intro:
