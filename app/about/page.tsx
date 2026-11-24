@@ -114,7 +114,7 @@ export default function AboutPage() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/about/our-story.jpg"
-                alt="My Appliance Pro technician repairing an appliance under a kitchen counter. My Appliance Pro technician disconnecting a dishwasher under a kitchen counter."
+                alt="My Appliance Pro technician disconnecting a dishwasher under a kitchen counter"
                 fill
                 className="object-cover"
                 priority
